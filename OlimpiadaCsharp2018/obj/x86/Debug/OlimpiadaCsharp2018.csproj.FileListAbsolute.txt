@@ -1,0 +1,9 @@
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.Form1.resources
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.Properties.Resources.resources
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.csproj.GenerateResource.Cache
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\bin\Debug\OlimpiadaCsharp2018.exe
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\bin\Debug\OlimpiadaCsharp2018.pdb
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.exe
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.pdb
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.csprojResolveAssemblyReference.cache
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.Forms.VizualizareLectii.resources
