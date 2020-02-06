@@ -11,7 +11,7 @@ namespace OlimpiadaCsharp2018.Helpers
 {
     public class DataAcces
     {
-        private static string connectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\vladu\Documents\CentenarDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
+        private static string connectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\CentenarDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
 
         public static List<LectieModel> GetLectii()
         {

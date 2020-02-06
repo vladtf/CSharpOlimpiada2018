@@ -49,6 +49,5 @@ namespace OlimpiadaCsharp2018.Forms
             }
         }
 
-
     }
 }
