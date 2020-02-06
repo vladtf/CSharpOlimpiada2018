@@ -31,14 +31,21 @@ namespace OlimpiadaCsharp2018.Forms
             string email = textBox1.Text;
             string parola = textBox2.Text;
 
-            UserModel user = LoghingDB.Autentificare(email, parola);
+            UserModel user = LoghingDB.Autentificare(email);
 
             if (user != null)
             {
-                (Tag as MainForm).Visible = true;
-                (Tag as MainForm).EsteAunteficat();
-                MessageBox.Show("Sunteti autentificat!");
-                this.Close();
+                if (user.Parola == parola)
+                {
+                    (Tag as MainForm).Visible = true;
+                    (Tag as MainForm).EsteAunteficat();
+                    MessageBox.Show("Sunteti autentificat!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Eroare de autentificare!");
+                }
             }
             else
             {
@@ -53,6 +60,29 @@ namespace OlimpiadaCsharp2018.Forms
             base.OnClosing(e);
 
             (Tag as MainForm).Visible = true;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                UserModel user = LoghingDB.Autentificare(textBox1.Text);
+                if (user != null)
+                {
+                    var page = new AmUitatParolaForm(user);
+                    page.Tag = Tag;
+                    page.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Introduceti un email valid!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Introduceti un email valid!");
+            }
         }
 
 
