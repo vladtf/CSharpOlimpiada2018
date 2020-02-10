@@ -21,8 +21,8 @@ namespace OlimpiadaCsharp2018.Forms
             //tabControl1.ItemSize = new Size(0, 1);
             //tabControl1.SizeMode = TabSizeMode.Fixed;
 
-            //textBox1.Text = "popescu@gmail.com";
-            //textBox2.Text = "popIon";
+            textBox1.Text = "popescu@gmail.com";
+            textBox2.Text = "popIon";
 
         }
 

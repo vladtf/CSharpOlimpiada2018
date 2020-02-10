@@ -22,12 +22,6 @@ namespace OlimpiadaCsharp2018.Forms
             listBox1.Items.AddRange(lectii.Select(x=>x.NumeImagine.Split('.')[0]).ToArray());
         }
 
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-            (Tag as Form).Show();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem != null)

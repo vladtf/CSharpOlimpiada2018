@@ -11,13 +11,13 @@ namespace OlimpiadaCsharp2018.Helpers
 {
     public class DataAcces
     {
-        private static string connectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\CentenarDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
+        public static string ConnectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\CentenarDB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
 
         public static List<LectieModel> GetLectii()
         {
             List<LectieModel> lectii = new List<LectieModel>();
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
 
@@ -49,7 +49,7 @@ namespace OlimpiadaCsharp2018.Helpers
         public static UserModel GetUser(int idUtilizator)
         {
             UserModel utilizator;
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
                 string cmdText = "Select * from Utilizatori where IdUtilizator = @idutilizator";

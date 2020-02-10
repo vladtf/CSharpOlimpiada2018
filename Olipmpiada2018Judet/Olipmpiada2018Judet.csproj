@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9226192B-176B-4FCF-8F6D-B611C2DAC952}</ProjectGuid>
+    <ProjectGuid>{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OlimpiadaCsharp2018</RootNamespace>
-    <AssemblyName>OlimpiadaCsharp2018</AssemblyName>
+    <RootNamespace>Olipmpiada2018Judet</RootNamespace>
+    <AssemblyName>Olipmpiada2018Judet</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -46,58 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\AmUitatParolaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AmUitatParolaForm.Designer.cs">
-      <DependentUpon>AmUitatParolaForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CreareLectie.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CreareLectie.Designer.cs">
-      <DependentUpon>CreareLectie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\LogareCentenar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\LogareCentenar.Designer.cs">
-      <DependentUpon>LogareCentenar.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DataAcces\InitializeFromFile.cs" />
+    <Compile Include="DataAcces\SqlDataAcces.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\VizualizareLectii.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VizualizareLectii.Designer.cs">
-      <DependentUpon>VizualizareLectii.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Helpers\DataAcces.cs" />
-    <Compile Include="Helpers\GetImages.cs" />
-    <Compile Include="Helpers\InitializationDataAcces.cs" />
-    <Compile Include="Helpers\LoghingDB.cs" />
-    <Compile Include="Models\LectieModel.cs" />
-    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\AmUitatParolaForm.resx">
-      <DependentUpon>AmUitatParolaForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreareLectie.resx">
-      <DependentUpon>CreareLectie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LogareCentenar.resx">
-      <DependentUpon>LogareCentenar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VizualizareLectii.resx">
-      <DependentUpon>VizualizareLectii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,6 +77,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

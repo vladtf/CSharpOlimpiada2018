@@ -11,7 +11,7 @@ namespace OlimpiadaCsharp2018.Helpers
     {
         public static UserModel Autentificare(string email)
         {
-            using( SqlConnection con = new SqlConnection(ConnectionString.String))
+            using( SqlConnection con = new SqlConnection(DataAcces.ConnectionString))
             {
                 con.Open();
                 string cmdText = "Select * from Utilizatori where Convert(VarChar,Email) = @email";
@@ -43,7 +43,7 @@ namespace OlimpiadaCsharp2018.Helpers
         }
         public static void SalvareParolaNoua(string parolaNoua, string email)
         {
-            using (SqlConnection con = new SqlConnection(ConnectionString.String))
+            using (SqlConnection con = new SqlConnection(DataAcces.ConnectionString))
             {
                 con.Open();
                 string cmdText = "Update Utilizatori set Parola = Convert(varchar,@parolaNoua) where Convert(varchar, Email) = @email";

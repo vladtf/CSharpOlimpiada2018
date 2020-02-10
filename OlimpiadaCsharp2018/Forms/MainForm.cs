@@ -18,15 +18,16 @@ namespace OlimpiadaCsharp2018
             InitializeComponent();
             InitializationDataAcces.InitializeDB();
 
-            button3.Enabled = button4.Enabled = button5.Enabled = false;
+            button3.Enabled = button4.Enabled = button5.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var page = new VizualizareLectii();
-            page.Tag = this;
-            page.Show();
-            this.Hide();
+            page.ShowDialog(this);
+            //page.Tag = this;
+            //page.Show();
+            //this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -40,6 +41,14 @@ namespace OlimpiadaCsharp2018
         public void EsteAunteficat()
         {
             button3.Enabled = button4.Enabled = button5.Enabled = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var page = new CreareLectie();
+            page.Tag = this;
+            page.Show();
+            this.Hide();
         }
 
 

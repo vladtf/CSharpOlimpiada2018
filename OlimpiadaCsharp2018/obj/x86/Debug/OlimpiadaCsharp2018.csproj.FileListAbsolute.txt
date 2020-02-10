@@ -9,3 +9,4 @@ C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olimpia
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.MainForm.resources
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.Forms.LogareCentenar.resources
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.Forms.AmUitatParolaForm.resources
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\OlimpiadaCsharp2018\obj\x86\Debug\OlimpiadaCsharp2018.Forms.CreareLectie.resources
