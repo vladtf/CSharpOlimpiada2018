@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Olipmpiada2018Judet.Helpers;
 using Olipmpiada2018Judet.Models;
+using Olipmpiada2018Judet.Forms;
 
 namespace Olipmpiada2018Judet.DataAcces
 {
@@ -103,12 +104,20 @@ namespace Olipmpiada2018Judet.DataAcces
             UserModel utilizator = SqlDataAcces.Autentificare(SqlDataAcces.ConnectionString, textBox2.Text);
             if (utilizator.Parola == textBox3.Text)
             {
-                MessageBox.Show("Autentificare cu succes!");
+                var page = new eLearning_Elev {Tag = this };
+                this.Hide();
+                page.Show();
             }
             else
             {
                 MessageBox.Show("Eroare de autentificare!");
+                textBox2.Text = textBox3.Text = "";
             }
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            InitializeFromFile.Initialize();
         }
     }
 }

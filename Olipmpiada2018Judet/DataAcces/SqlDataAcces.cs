@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Olipmpiada2018Judet.Models;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Olipmpiada2018Judet.DataAcces
 {
@@ -44,6 +45,42 @@ namespace Olipmpiada2018Judet.DataAcces
             }
 
             return utilizator;
+        }
+
+        public static List<ItemModel> GetAllItems(string connectionString)
+        {
+            List<ItemModel> items = new List<ItemModel>();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string cmdText = "Select * from Itemi";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ItemModel item = new ItemModel
+                            {
+                                IdItem = (int)reader["IdItem"],
+                                TipItem = (int)reader["TipItem"],
+                                EnuntItem = (string)reader["EnuntItem"],
+                                Raspuns1Item = (string)reader["Raspuns1Item"],
+                                Raspuns2Item = (string)reader["Raspuns2Item"],
+                                Raspuns3Item = (string)reader["Raspuns3Item"],
+                                Raspuns4Item = (string)reader["Raspuns4Item"],
+                                RaspunscorectItem = (string)reader["RaspunscorectItem"]
+                            };
+
+                            items.Add(item);
+                        }
+                    }
+                }
+            }
+
+            return items;
         }
     }
 }

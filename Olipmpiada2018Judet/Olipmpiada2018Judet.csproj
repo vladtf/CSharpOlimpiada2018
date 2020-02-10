@@ -54,21 +54,59 @@
     </Compile>
     <Compile Include="DataAcces\InitializeFromFile.cs" />
     <Compile Include="DataAcces\SqlDataAcces.cs" />
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="Forms\eLearning_Elev.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\eLearning_Elev.Designer.cs">
+      <DependentUpon>eLearning_Elev.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ImagesProcessor.cs" />
+    <Compile Include="ItemsControl\IItemType.cs" />
+    <Compile Include="ItemsControl\ItemTip1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemsControl\ItemTip1.Designer.cs">
+      <DependentUpon>ItemTip1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsControl\ItemTip2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemsControl\ItemTip2.Designer.cs">
+      <DependentUpon>ItemTip2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsControl\ItemTip3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemsControl\ItemTip3.Designer.cs">
+      <DependentUpon>ItemTip3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsControl\ItemTip4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemsControl\ItemTip4.Designer.cs">
+      <DependentUpon>ItemTip4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\eLearning1918_Start.resx">
       <DependentUpon>eLearning1918_Start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\eLearning_Elev.resx">
+      <DependentUpon>eLearning_Elev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemsControl\ItemTip1.resx">
+      <DependentUpon>ItemTip1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemsControl\ItemTip2.resx">
+      <DependentUpon>ItemTip2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemsControl\ItemTip3.resx">
+      <DependentUpon>ItemTip3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemsControl\ItemTip4.resx">
+      <DependentUpon>ItemTip4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

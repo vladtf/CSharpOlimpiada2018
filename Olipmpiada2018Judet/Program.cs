@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Olipmpiada2018Judet.Forms;
+using Olipmpiada2018Judet.DataAcces;
 
 namespace Olipmpiada2018Judet
 {
@@ -16,7 +17,7 @@ namespace Olipmpiada2018Judet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new eLearning1918_Start());
         }
     }
 }
