@@ -11,11 +11,12 @@ namespace Olipmpiada2018Judet.DataAcces
     {
         public static void Initialize()
         {
+            ClearDB(SqlDataAcces.ConnectionString);
+
             string filePath = "date.txt";
 
             using (StreamReader reader = new StreamReader(filePath))
             {
-
                 while (reader.Peek() >= 0)
                 {
                     string tableName = reader.ReadLine();
@@ -119,6 +120,35 @@ namespace Olipmpiada2018Judet.DataAcces
                     cmd.Parameters.AddWithValue("DataEvaluare", tokens[1]);
                     cmd.Parameters.AddWithValue("NotaEvaluare", tokens[2]);
 
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private static void ClearDB(string connectionString)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                string cmdText = "Delete from Evaluari";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
+                cmdText = "Delete from Itemi";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
+                cmdText = "Delete from Utilizatori";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
                     cmd.ExecuteNonQuery();
                 }
             }

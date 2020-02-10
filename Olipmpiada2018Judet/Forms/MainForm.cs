@@ -21,5 +21,11 @@ namespace Olipmpiada2018Judet.Forms
         {
             InitializeFromFile.Initialize();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var page = new eLearning1918_Start();
+            page.ShowDialog();
+        }
     }
 }

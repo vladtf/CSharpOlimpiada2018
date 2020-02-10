@@ -6,3 +6,4 @@ C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpi
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.exe
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.pdb
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.csprojResolveAssemblyReference.cache
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.DataAcces.eLearning1918_Start.resources

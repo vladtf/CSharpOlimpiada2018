@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\eLearning1918_Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\eLearning1918_Start.Designer.cs">
+      <DependentUpon>eLearning1918_Start.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAcces\InitializeFromFile.cs" />
     <Compile Include="DataAcces\SqlDataAcces.cs" />
     <Compile Include="Forms\MainForm.cs">
@@ -54,8 +60,13 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ImagesProcessor.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\eLearning1918_Start.resx">
+      <DependentUpon>eLearning1918_Start.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,8 +89,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Content Include="Resources\date.txt" />
+    <Content Include="Resources\imaginislideshow\1.jpg" />
+    <Content Include="Resources\imaginislideshow\2.jpg" />
+    <Content Include="Resources\imaginislideshow\3.jpg" />
+    <Content Include="Resources\imaginislideshow\4.jpg" />
+    <Content Include="Resources\imaginislideshow\5.jpg" />
+    <Content Include="Resources\user.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
