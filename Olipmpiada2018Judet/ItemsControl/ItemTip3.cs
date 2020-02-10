@@ -30,19 +30,20 @@ namespace Olipmpiada2018Judet.ItemsControl
         private void button1_Click(object sender, EventArgs e)
         {
             string raspuns = "";
-            foreach (var c in Controls)
+            string raspunsCorect = String.Join("",RaspunsCorect.Select(x => x).Reverse());
+            foreach (var c in groupBox1.Controls)
             {
                 if (c is CheckBox)
                 {
                     CheckBox radB = (CheckBox)c;
                     if (radB.Checked == true)
                     {
-                        raspuns += radB.Text.First(x => (x >= '1' && x <= '9')).ToString();
+                        raspuns += radB.Name.First(x => (x >= '1' && x <= '9')).ToString();
                     }
                 }
             }
 
-            if (raspuns == RaspunsCorect)
+            if (raspuns == raspunsCorect)
             {
                 (Tag as eLearning_Elev).RaspunsCorect();
                 button1.BackColor = Color.Green;

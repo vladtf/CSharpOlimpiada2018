@@ -27,17 +27,28 @@ namespace Olipmpiada2018Judet.ItemsControl
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
+        {
+            label2.Text = NrItem.ToString();
+            textBox1.Text = EnuntItem;
+
+            radioButton1.Text = Var1;
+            radioButton2.Text = Var2;
+            radioButton3.Text = Var3;
+            radioButton4.Text = Var4;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             string raspuns = "";
-            foreach (var c in Controls)
+            foreach (var c in groupBox1.Controls)
             {
                 if (c is RadioButton)
                 {
-                    RadioButton radB = (RadioButton) c;
+                    RadioButton radB = (RadioButton)c;
                     if (radB.Checked == true)
                     {
-                        raspuns = radB.Text.First(x => (x >= '1' && x <= '9')).ToString();
+                        raspuns = radB.Name.First(x => (x >= '1' && x <= '9')).ToString();
                     }
                 }
             }
@@ -52,17 +63,6 @@ namespace Olipmpiada2018Judet.ItemsControl
                 button1.BackColor = Color.Red;
             }
             button1.Enabled = false;
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            label2.Text = NrItem.ToString();
-            textBox1.Text = EnuntItem;
-
-            radioButton1.Text = Var1;
-            radioButton2.Text = Var2;
-            radioButton3.Text = Var3;
-            radioButton4.Text = Var4;
         }
 
     }

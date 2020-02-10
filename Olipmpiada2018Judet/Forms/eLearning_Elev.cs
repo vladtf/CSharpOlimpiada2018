@@ -19,8 +19,7 @@ namespace Olipmpiada2018Judet.Forms
         {
             InitializeComponent();
 
-            InitializareItemi();
-
+            button2.Enabled = false; 
         }
 
         public void RaspunsCorect()
@@ -35,6 +34,7 @@ namespace Olipmpiada2018Judet.Forms
 
         private void InitializareItemi()
         {
+            items = new List<ItemModel>();
             List<ItemModel> tempItems = SqlDataAcces.GetAllItems(SqlDataAcces.ConnectionString);
 
             List<ItemModel> itemTip1 = tempItems.Where(x => x.TipItem == 1).ToList();
@@ -47,6 +47,13 @@ namespace Olipmpiada2018Judet.Forms
             items.Add(itemTip2[r.Next(0, itemTip2.Count() - 1)]);
             items.Add(itemTip3[r.Next(0, itemTip3.Count() - 1)]);
             items.Add(itemTip4[r.Next(0, itemTip4.Count() - 1)]);
+
+
+            items.Add(itemTip1.Find(x => !items.Contains(x)));
+            items.Add(itemTip2.Find(x => !items.Contains(x)));
+            items.Add(itemTip3.Find(x => !items.Contains(x)));
+            items.Add(itemTip4.Find(x => !items.Contains(x)));
+            items.Add(itemTip1.Find(x => !items.Contains(x)));
 
             foreach (ItemModel item in items)
             {
@@ -124,6 +131,22 @@ namespace Olipmpiada2018Judet.Forms
 
                 default:
                     break;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            InitializareItemi();
+            button1.Enabled = false;
+            button2.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl2.SelectedIndex++;
+            if (tabControl2.SelectedIndex == 9)
+            {
+                button2.Enabled = false;
             }
         }
     }

@@ -30,12 +30,13 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.tabControl2);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -64,6 +66,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Test";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Location = new System.Drawing.Point(6, 44);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(819, 526);
+            this.tabControl2.TabIndex = 3;
             // 
             // label2
             // 
@@ -94,13 +104,14 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Start test";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(809, 559);
+            this.tabPage2.Size = new System.Drawing.Size(831, 576);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Carnet de note";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -110,18 +121,21 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(809, 559);
+            this.tabPage3.Size = new System.Drawing.Size(831, 576);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Grafic note";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
+            // button2
             // 
-            this.tabControl2.Location = new System.Drawing.Point(6, 44);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(819, 526);
-            this.tabControl2.TabIndex = 3;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(169, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(143, 28);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Uramtoarea\r\n";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // eLearning_Elev
             // 
@@ -148,5 +162,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.Button button2;
     }
 }
