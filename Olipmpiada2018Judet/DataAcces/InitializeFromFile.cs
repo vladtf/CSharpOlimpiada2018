@@ -111,11 +111,10 @@ namespace Olipmpiada2018Judet.DataAcces
             using (SqlConnection con = new SqlConnection(SqlDataAcces.ConnectionString))
             {
                 con.Open();
-                string cmdText = "Insert into Evaluari (IdEvaluare, IdElev, DataEvaluare, NotaEvaluare)" +
-                    "Values (@IdEvaluare, @IdElev, @DataEvaluare, @NotaEvaluare)";
+                string cmdText = "Insert into Evaluari (IdElev, DataEvaluare, NotaEvaluare)" +
+                    "Values (@IdElev, @DataEvaluare, @NotaEvaluare)";
                 using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
-                    cmd.Parameters.AddWithValue("IdEvaluare", id);
                     cmd.Parameters.AddWithValue("IdElev", int.Parse(tokens[0]));
                     cmd.Parameters.AddWithValue("DataEvaluare", tokens[1]);
                     cmd.Parameters.AddWithValue("NotaEvaluare", tokens[2]);

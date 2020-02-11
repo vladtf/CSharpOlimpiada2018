@@ -63,6 +63,12 @@
     <Compile Include="Forms\eLearning_Elev.Designer.cs">
       <DependentUpon>eLearning_Elev.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RaportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RaportForm.Designer.cs">
+      <DependentUpon>RaportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\ImagesProcessor.cs" />
     <Compile Include="ItemsControl\ItemTip1.cs">
       <SubType>UserControl</SubType>
@@ -90,6 +96,7 @@
     </Compile>
     <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Models\MarkModel.cs" />
+    <Compile Include="Models\ResponModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\eLearning_Elev.resx">
       <DependentUpon>eLearning_Elev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RaportForm.resx">
+      <DependentUpon>RaportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemsControl\ItemTip1.resx">
       <DependentUpon>ItemTip1.cs</DependentUpon>

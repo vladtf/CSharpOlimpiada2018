@@ -27,7 +27,6 @@ namespace Olipmpiada2018Judet.ItemsControl
             string raspungCorect = string.Join("",RaspunsCorect.Split(' ').ToList()).ToLower();
             if (raspuns == raspungCorect)
             {
-                (Tag as eLearning_Elev).RaspunsCorect();
                 button1.BackColor = Color.Green;
             }
             else
@@ -35,6 +34,7 @@ namespace Olipmpiada2018Judet.ItemsControl
                 button1.BackColor = Color.Red;
             }
             button1.Enabled = false;
+            (Tag as eLearning_Elev).Raspunde(raspungCorect, raspuns);
         }
 
         protected override void OnLoad(EventArgs e)

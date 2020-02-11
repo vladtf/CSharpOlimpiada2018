@@ -10,11 +10,14 @@ using Olipmpiada2018Judet.Models;
 using Olipmpiada2018Judet.DataAcces;
 using Olipmpiada2018Judet.ItemsControl;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Drawing.Printing;
 
 namespace Olipmpiada2018Judet.Forms
 {
     public partial class eLearning_Elev : Form
     {
+        private Bitmap bitmap;
+        private List<ResponModel> raspunsuri = new List<ResponModel>();
         private List<ItemModel> items;
         public UserModel UserLoged { get; set; }
         public eLearning_Elev()
@@ -24,9 +27,14 @@ namespace Olipmpiada2018Judet.Forms
             button2.Enabled = false;
         }
 
-        public void RaspunsCorect()
+        public void Raspunde(string raspunsCorect, string raspuns)
         {
-            label2.Text = ((int.Parse(label2.Text)) + 1).ToString();
+            if (raspuns == raspunsCorect)
+            {
+                label2.Text = ((int.Parse(label2.Text)) + 1).ToString();
+            }
+            ResponModel newRespons = new ResponModel { RaspunsCorect = raspunsCorect, RaspunsUtilizator = raspuns };
+            raspunsuri.Add(newRespons);
         }
 
         protected override void OnClosed(EventArgs e)
@@ -138,25 +146,39 @@ namespace Olipmpiada2018Judet.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            InitializareItemi();
-            button1.Enabled = false;
-            button2.Enabled = true;
+            if (button1.Text == "Start test")
+            {
+                button1.Text = "Finializare";
+                InitializareItemi();
+                button1.Enabled = false;
+                button2.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+
+                SqlDataAcces.SalvareNota(SqlDataAcces.ConnectionString, UserLoged.IDUtilizator, int.Parse(label2.Text));
+
+                RaportForm raport = new RaportForm();
+
+                foreach (ResponModel item in raspunsuri)
+                {
+                    raport.AddRow(item.RaspunsUtilizator, item.RaspunsCorect);
+                }
+
+                raport.ShowDialog();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             tabControl2.SelectedIndex++;
-            if (tabControl2.SelectedIndex == 9)
+            if (tabControl2.SelectedIndex == 8)
             {
                 button2.Enabled = false;
+                button1.Enabled = true;
             }
         }
-
-        private void eLearning_Elev_Load(object sender, EventArgs e)
-        {
-            InitializeChart();
-        }
-
 
         private void InitializeChart()
         {
@@ -176,8 +198,9 @@ namespace Olipmpiada2018Judet.Forms
             chart1.Series.Add(serie);
 
             chart1.Series[0].XValueType = ChartValueType.DateTime;
+            chart1.Series[0].Name = "Nota";
             chart1.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
-            chart1.ChartAreas[0].AxisX.Interval = 1;
+            //chart1.ChartAreas[0].AxisX.Interval = 1;
             chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
 
             DateTime maxDate = note.Max(x => x.Data);
@@ -193,6 +216,66 @@ namespace Olipmpiada2018Judet.Forms
             notaMedie.Points.AddXY(minDate, MarkModel.NotaMedie);
             notaMedie.Points.AddXY(maxDate, MarkModel.NotaMedie);
             chart1.Series.Add(notaMedie);
+            chart1.Series[1].Name = "Media clasei";
         }
+
+        private void InitializeCarnet()
+        {
+            List<MarkModel> note = SqlDataAcces.GetAllMarks(SqlDataAcces.ConnectionString, UserLoged);
+            dataGridView1.Columns.Clear();
+
+            DataTable newTable = new DataTable();
+            newTable.Columns.Add("Nota", typeof(int));
+            newTable.Columns.Add("Data", typeof(DateTime));
+            foreach (MarkModel item in note)
+            {
+                DataRow newRow = newTable.NewRow();
+                newRow["Nota"] = item.Nota;
+                newRow["Data"] = item.Data;
+                newTable.Rows.Add(newRow);
+            }
+            dataGridView1.DataSource = newTable;
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            InitializeChart();
+            InitializeCarnet();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            label3.Text = "Carnetul elevului : " + UserLoged.Nume;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+        //    PrintPreviewDialog printPreview = new PrintPreviewDialog();
+        //    printPreview.ClientSize = new Size(400, 400);
+        //    printPreview.DesktopLocation = new Point(30, 30);
+        //    printPreview.Name = "Print preview dialog";
+        //    printPreview.UseAntiAlias = true;
+        //    printPreview.Document = new PrintDocument();
+
+            int height = dataGridView1.Height;
+
+            dataGridView1.Height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height;
+
+            bitmap = new Bitmap(dataGridView1.Width, dataGridView1.Height);
+            dataGridView1.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+
+            dataGridView1.Height = height;
+
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bitmap, new Point(0, 0));
+        }
+
+
     }
 }

@@ -54,13 +54,13 @@ namespace Olipmpiada2018Judet.ItemsControl
 
             if (raspuns == RaspunsCorect)
             {
-                (Tag as eLearning_Elev).RaspunsCorect();
                 button1.BackColor = Color.Green;
             }
             else
             {
                 button1.BackColor = Color.Red;
             }
+            (Tag as eLearning_Elev).Raspunde(RaspunsCorect, raspuns);
             button1.Enabled = false;
         }
 

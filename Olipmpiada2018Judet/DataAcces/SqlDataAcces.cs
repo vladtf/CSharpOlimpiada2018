@@ -92,7 +92,7 @@ namespace Olipmpiada2018Judet.DataAcces
 
                 string cmdText = "Select * from Evaluari";
 
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -113,5 +113,26 @@ namespace Olipmpiada2018Judet.DataAcces
 
             return marks;
         }
+
+        public static void SalvareNota(string connectionString, int IdUtilizator, int nota)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                string cmdText = "Insert into Evaluari(IdElev, DataEvaluare, NotaEvaluare) values (@idelev, @data, @nota);";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                {
+                    cmd.Parameters.AddWithValue("idelev", IdUtilizator);
+                    cmd.Parameters.AddWithValue("data", DateTime.Now);
+                    cmd.Parameters.AddWithValue("nota", nota);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+        }
+
     }
 }
