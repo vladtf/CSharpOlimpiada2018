@@ -29,5 +29,37 @@ namespace Olimpiada2019Judet.DataAcces
                 }
             }
         }
+        public static UtilizatorModel Logare(string connectionStrin, string email, string parola)
+        {
+            UtilizatorModel utilizator = new UtilizatorModel();
+            using (SqlConnection con = new SqlConnection(connectionStrin))
+            {
+                con.Open();
+                string cmdText = "Select email,parola,nume,prenume from utilizatori where email = @email and parola = @parola";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    cmd.Parameters.AddWithValue("email", email);
+                    cmd.Parameters.AddWithValue("parola", parola);
+
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                        {
+                            utilizator = new UtilizatorModel
+                            {
+                                email = (string)rdr["email"],
+                                parola = (string)rdr["parola"],
+                                nume = (string)rdr["nume"],
+                                prenume = (string)rdr["prenume"]
+                            };
+                        }
+                        
+                    }
+                }
+            }
+
+            return utilizator;
+        }
     }
 }

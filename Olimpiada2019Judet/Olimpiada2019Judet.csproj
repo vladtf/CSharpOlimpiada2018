@@ -60,6 +60,12 @@
     <Compile Include="Forms\FreeBookHome.Designer.cs">
       <DependentUpon>FreeBookHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LogareFreeBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogareFreeBook.Designer.cs">
+      <DependentUpon>LogareFreeBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\UtilizatorModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +74,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FreeBookHome.resx">
       <DependentUpon>FreeBookHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogareFreeBook.resx">
+      <DependentUpon>LogareFreeBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

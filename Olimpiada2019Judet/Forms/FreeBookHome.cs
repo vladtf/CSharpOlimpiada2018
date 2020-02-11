@@ -24,7 +24,8 @@ namespace Olimpiada2019Judet.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var page = new LogareFreeBook();
+            page.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
