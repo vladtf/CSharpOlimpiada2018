@@ -48,14 +48,24 @@
   <ItemGroup>
     <Compile Include="DataAcces\InitializatorDB.cs" />
     <Compile Include="DataAcces\SqlDataAcces.cs" />
+    <Compile Include="Forms\CreeazaContFreeBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreeazaContFreeBook.Designer.cs">
+      <DependentUpon>CreeazaContFreeBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FreeBookHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FreeBookHome.Designer.cs">
       <DependentUpon>FreeBookHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\UtilizatorModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CreeazaContFreeBook.resx">
+      <DependentUpon>CreeazaContFreeBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FreeBookHome.resx">
       <DependentUpon>FreeBookHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

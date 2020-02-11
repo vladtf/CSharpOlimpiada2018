@@ -43,17 +43,15 @@ namespace Olimpiada2019Judet.DataAcces
                 cmdText = "Insert into utilizatori (email,parola,nume,prenume) values (@email,@parola,@nume,@prenume);";
                 using (StreamReader reader = new StreamReader(filePath))
                 {
-                    int i = 0;
                     while (reader.Peek() >= 0)
                     {
-                        i++;
                         var line = reader.ReadLine().Split('*');
                         using (SqlCommand cmd = new SqlCommand(cmdText, con))
                         {
-                            cmd.Parameters.AddWithValue("email", i);
-                            cmd.Parameters.AddWithValue("parola", line[0]);
-                            cmd.Parameters.AddWithValue("nume", line[1]);
-                            cmd.Parameters.AddWithValue("prenume", line[2]);
+                            cmd.Parameters.AddWithValue("email", line[0]);
+                            cmd.Parameters.AddWithValue("parola", line[1]);
+                            cmd.Parameters.AddWithValue("nume", line[2]);
+                            cmd.Parameters.AddWithValue("prenume", line[3]);
 
                             cmd.ExecuteNonQuery();
                         }

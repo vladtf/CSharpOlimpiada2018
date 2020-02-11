@@ -5,3 +5,4 @@ C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olimpia
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olimpiada2019Judet\bin\Debug\Olimpiada2019Judet.pdb
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.exe
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.pdb
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.Forms.CreeazaContFreeBook.resources

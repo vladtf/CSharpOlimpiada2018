@@ -21,5 +21,16 @@ namespace Olimpiada2019Judet.Forms
         {
             InitializatorDB.Initializare(SqlDataAcces.ConnectionString);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var page = new CreeazaContFreeBook();
+            page.ShowDialog();
+        }
     }
 }
