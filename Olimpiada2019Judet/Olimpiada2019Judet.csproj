@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85FFA623-7053-4951-A8E2-128D5014115E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Olimpiada2019Judet</RootNamespace>
+    <AssemblyName>Olimpiada2019Judet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAcces\InitializatorDB.cs" />
+    <Compile Include="DataAcces\SqlDataAcces.cs" />
+    <Compile Include="Forms\FreeBookHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FreeBookHome.Designer.cs">
+      <DependentUpon>FreeBookHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FreeBookHome.resx">
+      <DependentUpon>FreeBookHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resurse\cartipdf\1.pdf" />
+    <None Include="Resurse\cartipdf\10.pdf" />
+    <None Include="Resurse\cartipdf\11.pdf" />
+    <None Include="Resurse\cartipdf\12.pdf" />
+    <None Include="Resurse\cartipdf\13.pdf" />
+    <None Include="Resurse\cartipdf\14.pdf" />
+    <None Include="Resurse\cartipdf\15.pdf" />
+    <None Include="Resurse\cartipdf\16.pdf" />
+    <None Include="Resurse\cartipdf\17.pdf" />
+    <None Include="Resurse\cartipdf\18.pdf" />
+    <None Include="Resurse\cartipdf\19.pdf" />
+    <None Include="Resurse\cartipdf\2.pdf" />
+    <None Include="Resurse\cartipdf\20.pdf" />
+    <None Include="Resurse\cartipdf\21.pdf" />
+    <None Include="Resurse\cartipdf\22.pdf" />
+    <None Include="Resurse\cartipdf\23.pdf" />
+    <None Include="Resurse\cartipdf\24.pdf" />
+    <None Include="Resurse\cartipdf\3.pdf" />
+    <None Include="Resurse\cartipdf\4.pdf" />
+    <None Include="Resurse\cartipdf\5.pdf" />
+    <None Include="Resurse\cartipdf\6.pdf" />
+    <None Include="Resurse\cartipdf\7.pdf" />
+    <None Include="Resurse\cartipdf\8.pdf" />
+    <None Include="Resurse\cartipdf\9.pdf" />
+    <None Include="Resurse\FreeBook.xls" />
+    <None Include="Resurse\FreeBook.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resurse\carti.txt" />
+    <Content Include="Resurse\imprumuturi.txt" />
+    <Content Include="Resurse\sigla_Biblioteca_3.jpg" />
+    <Content Include="Resurse\sigla_Biblioteca_Alexandria.jpg" />
+    <Content Include="Resurse\sigla_Biblioteca_Alexandria_2.jpg" />
+    <Content Include="Resurse\sigla_Biblioteca_principala_1.jpg" />
+    <Content Include="Resurse\sigla_FreeBook.jpg" />
+    <Content Include="Resurse\sigla_FreeBook_1.png" />
+    <Content Include="Resurse\sila_Biblioteca.jpg" />
+    <Content Include="Resurse\utilizatori.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

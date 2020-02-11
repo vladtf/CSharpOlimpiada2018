@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlimpiadaCsharp2018", "OlimpiadaCsharp2018\OlimpiadaCsharp2018.csproj", "{9226192B-176B-4FCF-8F6D-B611C2DAC952}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2018National", "OlimpiadaCsharp2018\Olimpiada2018National.csproj", "{9226192B-176B-4FCF-8F6D-B611C2DAC952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olipmpiada2018Judet", "Olipmpiada2018Judet\Olipmpiada2018Judet.csproj", "{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2018Judet", "Olipmpiada2018Judet\Olimpiada2018Judet.csproj", "{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2019Judet", "Olimpiada2019Judet\Olimpiada2019Judet.csproj", "{85FFA623-7053-4951-A8E2-128D5014115E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}.Debug|x86.Build.0 = Debug|x86
 		{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}.Release|x86.ActiveCfg = Release|x86
 		{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}.Release|x86.Build.0 = Release|x86
+		{85FFA623-7053-4951-A8E2-128D5014115E}.Debug|x86.ActiveCfg = Debug|x86
+		{85FFA623-7053-4951-A8E2-128D5014115E}.Debug|x86.Build.0 = Debug|x86
+		{85FFA623-7053-4951-A8E2-128D5014115E}.Release|x86.ActiveCfg = Release|x86
+		{85FFA623-7053-4951-A8E2-128D5014115E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
