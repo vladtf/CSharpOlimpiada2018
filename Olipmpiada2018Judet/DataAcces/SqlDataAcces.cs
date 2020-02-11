@@ -82,5 +82,36 @@ namespace Olipmpiada2018Judet.DataAcces
 
             return items;
         }
+
+        public static List<MarkModel> GetAllMarks(string connectionString, UserModel utilizator)
+        {
+            List<MarkModel> marks = new List<MarkModel>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+
+                string cmdText = "Select * from Evaluari";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MarkModel nota = new MarkModel();
+                            if ((int)reader["IdElev"] == utilizator.IDUtilizator)
+                            {
+                                nota.Data = (DateTime)reader["DataEvaluare"];
+                                nota.Nota = (int)reader["NotaEvaluare"];
+                                marks.Add(nota);
+                            }
+                            MarkModel.ToateNotele.Add((int)reader["NotaEvaluare"]);
+                        }
+                    }
+                }
+            }
+
+            return marks;
+        }
     }
 }

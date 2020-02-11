@@ -104,7 +104,7 @@ namespace Olipmpiada2018Judet.DataAcces
             UserModel utilizator = SqlDataAcces.Autentificare(SqlDataAcces.ConnectionString, textBox2.Text);
             if (utilizator.Parola == textBox3.Text)
             {
-                var page = new eLearning_Elev {Tag = this };
+                var page = new eLearning_Elev {Tag = this, UserLoged = utilizator};
                 this.Hide();
                 page.Show();
             }

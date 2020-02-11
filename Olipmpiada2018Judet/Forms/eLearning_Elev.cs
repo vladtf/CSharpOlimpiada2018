@@ -9,17 +9,19 @@ using System.Windows.Forms;
 using Olipmpiada2018Judet.Models;
 using Olipmpiada2018Judet.DataAcces;
 using Olipmpiada2018Judet.ItemsControl;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Olipmpiada2018Judet.Forms
 {
     public partial class eLearning_Elev : Form
     {
         private List<ItemModel> items;
+        public UserModel UserLoged { get; set; }
         public eLearning_Elev()
         {
             InitializeComponent();
 
-            button2.Enabled = false; 
+            button2.Enabled = false;
         }
 
         public void RaspunsCorect()
@@ -148,6 +150,49 @@ namespace Olipmpiada2018Judet.Forms
             {
                 button2.Enabled = false;
             }
+        }
+
+        private void eLearning_Elev_Load(object sender, EventArgs e)
+        {
+            InitializeChart();
+        }
+
+
+        private void InitializeChart()
+        {
+            List<MarkModel> note = SqlDataAcces.GetAllMarks(SqlDataAcces.ConnectionString, this.UserLoged);
+            note = note.OrderBy(x => x.Data).ToList();
+
+            Series serie = new Series();
+            serie.ChartType = SeriesChartType.Line;
+
+            foreach (MarkModel nota in note)
+            {
+                serie.Points.AddXY(nota.Data, nota.Nota);
+            }
+
+
+            chart1.Series.Clear();
+            chart1.Series.Add(serie);
+
+            chart1.Series[0].XValueType = ChartValueType.DateTime;
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
+            chart1.ChartAreas[0].AxisX.Interval = 1;
+            chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
+
+            DateTime maxDate = note.Max(x => x.Data);
+            DateTime minDate = note.Min(x => x.Data);
+
+            chart1.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
+            chart1.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
+
+
+            Series notaMedie = new Series();
+            notaMedie.ChartType = SeriesChartType.Line;
+
+            notaMedie.Points.AddXY(minDate, MarkModel.NotaMedie);
+            notaMedie.Points.AddXY(maxDate, MarkModel.NotaMedie);
+            chart1.Series.Add(notaMedie);
         }
     }
 }

@@ -11,7 +11,8 @@
     <RootNamespace>Olipmpiada2018Judet</RootNamespace>
     <AssemblyName>Olipmpiada2018Judet</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -36,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,7 +64,6 @@
       <DependentUpon>eLearning_Elev.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ImagesProcessor.cs" />
-    <Compile Include="ItemsControl\IItemType.cs" />
     <Compile Include="ItemsControl\ItemTip1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +89,7 @@
       <DependentUpon>ItemTip4.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ItemModel.cs" />
+    <Compile Include="Models\MarkModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,7 +119,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

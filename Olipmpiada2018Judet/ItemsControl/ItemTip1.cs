@@ -10,7 +10,7 @@ using Olipmpiada2018Judet.Forms;
 
 namespace Olipmpiada2018Judet.ItemsControl
 {
-    public partial class ItemTip1 : UserControl, IItemType
+    public partial class ItemTip1 : UserControl
     {
         public string NrItem { get; set; }
         public string EnuntItem { get; set; }
