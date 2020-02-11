@@ -1,0 +1,12 @@
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\bin\Debug\OlimpiadaCSharp.exe
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\bin\Debug\OlimpiadaCSharp.pdb
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.Properties.Resources.resources
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.csproj.GenerateResource.Cache
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.exe
+c:\users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.pdb
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.csprojResolveAssemblyReference.cache
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\bin\Debug\OlimpiadaCSharp.exe.config
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.Initializationform.resources
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.Forms.GenereazaPostare.resources
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.Forms.VizualizareExcursie.resources
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCSharp\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.Forms.CentenarLogare.resources
