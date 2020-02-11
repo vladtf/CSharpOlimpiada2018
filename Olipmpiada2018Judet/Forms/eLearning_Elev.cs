@@ -276,6 +276,21 @@ namespace Olipmpiada2018Judet.Forms
             e.Graphics.DrawImage(bitmap, new Point(0, 0));
         }
 
+        private void exitToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            (Tag as eLearning1918_Start).Close();
+        }
 
+        private void restartAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            (Tag as eLearning1918_Start).Autentificare();
+        }
+
+        private void bckToStartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

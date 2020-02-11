@@ -4,7 +4,6 @@ C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpi
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\bin\Debug\Olipmpiada2018Judet.pdb
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.exe
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.pdb
-C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.csprojResolveAssemblyReference.cache
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.DataAcces.eLearning1918_Start.resources
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.Forms.eLearning_Elev.resources
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.ItemsControl.ItemTip1.resources
@@ -13,3 +12,4 @@ C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpi
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.ItemsControl.ItemTip4.resources
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\bin\Debug\Olipmpiada2018Judet.exe.config
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.Forms.RaportForm.resources
+C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olipmpiada2018Judet\obj\x86\Debug\Olipmpiada2018Judet.csprojResolveAssemblyReference.cache

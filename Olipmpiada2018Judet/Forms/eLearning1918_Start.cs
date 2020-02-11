@@ -101,10 +101,15 @@ namespace Olipmpiada2018Judet.DataAcces
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Autentificare();
+        }
+
+        public void Autentificare()
+        {
             UserModel utilizator = SqlDataAcces.Autentificare(SqlDataAcces.ConnectionString, textBox2.Text);
             if (utilizator.Parola == textBox3.Text)
             {
-                var page = new eLearning_Elev {Tag = this, UserLoged = utilizator};
+                var page = new eLearning_Elev { Tag = this, UserLoged = utilizator };
                 this.Hide();
                 page.Show();
             }
