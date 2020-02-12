@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Olimpiada2019Judet.Models;
 using Olimpiada2019Judet.DataAcces;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Olimpiada2019Judet.Forms
 {
@@ -32,6 +33,10 @@ namespace Olimpiada2019Judet.Forms
             progressBar1.Maximum = 3;
             progressBar1.Minimum = 0;
             progressBar1.Value = 3;
+
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy";
+            dateTimePicker1.ShowUpDown = true;
 
         }
 
@@ -78,6 +83,50 @@ namespace Olimpiada2019Judet.Forms
 
         private void tabControl1_Click(object sender, EventArgs e)
         {
+            InitializareImprumuturiTable();
+            InitializareUtilizatoriTable();
+        }
+
+        private void InitializareUtilizatoriTable()
+        {
+            chart1.Series.Clear();
+            Series serie = new Series();
+            serie.Name = "Luna";
+            //serie.XValueType = typeof(string);
+
+            DateTime an = dateTimePicker1.Value.AddDays(1-dateTimePicker1.Value.DayOfYear);
+
+            var imprumuturiAn = SqlDataAcces.GetImprumuturiAn(an, an.AddYears(1)).Select(x=>x.DataImprumut).OrderBy(x=>x).Select(x=>x.ToString("MMM")).ToList();
+            var stats = imprumuturiAn.GroupBy(x => x).ToList();
+
+            DateTime temp = DateTime.Now.AddDays(1 - DateTime.Now.DayOfYear);
+            for (int i = 0; i < 11; i++)
+            {
+                string data = temp.ToString("MMM");
+                serie.Points.AddXY(data, 0);
+                temp = temp.AddMonths(1);
+            }
+
+            foreach (var item in stats)
+            {
+                serie.Points.AddXY(item.First(),item.Count());
+            }
+
+            chart1.Series.Add(serie);
+
+            chart1.ChartAreas[0].AxisX.Interval = 1;
+            
+            chart1.Series[0].IsValueShownAsLabel = true;
+
+            //chart1.ChartAreas[0].AxisX.LabelStyle.Format = "MMM";
+            chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chart1.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
+            chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            chart1.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
+        }
+
+        private void InitializareImprumuturiTable()
+        {
             progressBar1.Value = 3;
             try
             {
@@ -85,7 +134,7 @@ namespace Olimpiada2019Judet.Forms
             }
             catch { }
 
-            imprumuturi = SqlDataAcces.GetImprumuturi(utilizator);
+            imprumuturi = SqlDataAcces.GetImprumuturiUtilizator(utilizator);
             imprumuturi = imprumuturi.OrderByDescending(x => x.DataImprumut).ToList();
             List<int> expirate = new List<int>();
             table = new DataTable();
@@ -112,7 +161,7 @@ namespace Olimpiada2019Judet.Forms
                 {
                     expirate.Add(index);
                 }
-                
+
             }
 
             dataGridView2.DataSource = table;
@@ -133,7 +182,11 @@ namespace Olimpiada2019Judet.Forms
             }
 
             label3.Text = progressBar1.Value.ToString() + " / 3 ";
+        }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            InitializareUtilizatoriTable();
         }
     }
 }

@@ -111,7 +111,7 @@ namespace Olimpiada2019Judet.DataAcces
             }
         }
 
-        public static List<ImprumutModel> GetImprumuturi(UtilizatorModel utilizator)
+        public static List<ImprumutModel> GetImprumuturiUtilizator(UtilizatorModel utilizator)
         {
             List<ImprumutModel> imprumuturi = new List<ImprumutModel>();
             int i = 0;
@@ -125,6 +125,44 @@ namespace Olimpiada2019Judet.DataAcces
                 {
                     cmd.Parameters.AddWithValue("email", utilizator.email);
 
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            i++;
+                            DateTime date = (DateTime)reader[3];
+                            ImprumutModel imprumut = new ImprumutModel
+                            {
+                                Index = i,
+                                IDCarte = (int)reader[0],
+                                Titlu = (string)reader[1],
+                                Autor = (string)reader[2],
+                                DataImprumut = date,
+                                DataDisponibilitate = date.AddDays(30)
+
+                            };
+                            imprumuturi.Add(imprumut);
+                        }
+                    }
+                }
+            }
+            return imprumuturi;
+        }
+
+        public static List<ImprumutModel> GetImprumuturiAn(DateTime anStart, DateTime anEnd)
+        {
+            List<ImprumutModel> imprumuturi = new List<ImprumutModel>();
+            int i = 0;
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Select c.id_carte, c.titlu, c.autor, i.data_imprumut from carti c, imprumut i where c.id_carte = i.id_carte and i.data_imprumut >= @anStart and i.data_imprumut <=@anEnd";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    cmd.Parameters.AddWithValue("anStart", anStart);
+                    cmd.Parameters.AddWithValue("anEnd", anEnd);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
