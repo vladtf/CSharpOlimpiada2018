@@ -73,6 +73,7 @@
     <Compile Include="Forms\MeniuFreeBook.Designer.cs">
       <DependentUpon>MeniuFreeBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ImprumutModel.cs" />
     <Compile Include="Models\UtilizatorModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
