@@ -34,7 +34,11 @@ namespace Olimpiada2019Judet.Forms
                 try
                 {
                     SqlDataAcces.Registrare(SqlDataAcces.ConnectionString, utilizator);
+                    utilizator = SqlDataAcces.Logare(SqlDataAcces.ConnectionString, textBox1.Text, textBox4.Text);
                     MessageBox.Show("Inregistrare cu succes!");
+                    this.Close();
+                    this.Visible = false;
+                    (Owner as FreeBookHome).Autentificat(utilizator);
                 }
                 catch (Exception)
                 {

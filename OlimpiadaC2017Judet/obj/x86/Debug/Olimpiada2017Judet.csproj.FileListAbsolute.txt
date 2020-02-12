@@ -9,3 +9,13 @@ C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada20
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2017Judet\OlimpiadaCSharp\obj\x86\Debug\Olimpiada2017Judet.csproj.GenerateResource.cache
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2017Judet\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.exe
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2017Judet\OlimpiadaCSharp\obj\x86\Debug\OlimpiadaCSharp.pdb
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\bin\Debug\OlimpiadaCSharp.exe.config
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\bin\Debug\OlimpiadaCSharp.exe
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\bin\Debug\OlimpiadaCSharp.pdb
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\OlimpiadaCSharp.Forms.GenereazaPostare.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\OlimpiadaCSharp.Initializationform.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\OlimpiadaCSharp.Forms.VizualizareExcursie.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\OlimpiadaCSharp.Properties.Resources.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\Olimpiada2017Judet.csproj.GenerateResource.Cache
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\OlimpiadaCSharp.exe
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\OlimpiadaCSharp.pdb

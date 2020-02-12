@@ -61,5 +61,54 @@ namespace Olimpiada2019Judet.DataAcces
 
             return utilizator;
         }
+
+        public static int VerificaImprumuturi(UtilizatorModel utilizator)
+        {
+            int i = 0;
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                DateTime data = DateTime.Now.AddDays(-30);
+                string cmdText = "Select * from imprumut where email = @email and data_imprumut > @data";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                {
+                    cmd.Parameters.AddWithValue("email", utilizator.email);
+                    cmd.Parameters.AddWithValue("data", data);
+
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            i++;
+                        }
+                    }
+                }
+            }
+            return i;
+        }
+
+        public static void ImprumutaCarte(int idCarte, UtilizatorModel utilizator)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Insert into imprumut ( id_carte, email, data_imprumut ) values " +
+                    "(@idCarte, @email, @data)";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                {
+                    DateTime data = DateTime.Now;
+
+                    cmd.Parameters.AddWithValue("idCarte", idCarte);
+                    cmd.Parameters.AddWithValue("email", utilizator.email);
+                    cmd.Parameters.AddWithValue("@data", data);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

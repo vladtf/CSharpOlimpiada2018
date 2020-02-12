@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAcces\InitializareImprumuturiDB.cs" />
     <Compile Include="DataAcces\InitializatorDB.cs" />
     <Compile Include="DataAcces\SqlDataAcces.cs" />
     <Compile Include="Forms\CreeazaContFreeBook.cs">
@@ -66,6 +67,12 @@
     <Compile Include="Forms\LogareFreeBook.Designer.cs">
       <DependentUpon>LogareFreeBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MeniuFreeBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MeniuFreeBook.Designer.cs">
+      <DependentUpon>MeniuFreeBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\UtilizatorModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogareFreeBook.resx">
       <DependentUpon>LogareFreeBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeniuFreeBook.resx">
+      <DependentUpon>MeniuFreeBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

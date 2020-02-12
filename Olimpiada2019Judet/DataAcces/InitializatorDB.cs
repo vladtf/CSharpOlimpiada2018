@@ -59,7 +59,7 @@ namespace Olimpiada2019Judet.DataAcces
                 }
 
                 filePath = "Resurse//imprumuturi.txt";
-                cmdText = "Insert into imprumut (id_imprumut,id_carte,email,data_imprumut) values (@id_imprumut,@id_carte,@email,@data_imprumut);";
+                cmdText = "Insert into imprumut (id_carte,email,data_imprumut) values (@id_carte,@email,@data_imprumut);";
                 using (StreamReader reader = new StreamReader(filePath))
                 {
                     int i = 0;
@@ -81,7 +81,6 @@ namespace Olimpiada2019Judet.DataAcces
 
                         using (SqlCommand cmd = new SqlCommand(cmdText, con))
                         {
-                            cmd.Parameters.AddWithValue("id_imprumut", i);
                             cmd.Parameters.AddWithValue("id_carte", idCarte);
                             cmd.Parameters.AddWithValue("email", line[1]);
                             string date = line[2].Trim();

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2018Judet", "Olipmpiada2018Judet\Olimpiada2018Judet.csproj", "{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2018National", "OlimpiadaCsharp2018\Olimpiada2018National.csproj", "{9226192B-176B-4FCF-8F6D-B611C2DAC952}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2017Judet", "Olimpiada2017Judet\Olimpiada2017Judet.csproj", "{38077AA3-2A84-473D-B179-67EFC4D1BCCC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2019Judet", "Olimpiada2019Judet\Olimpiada2019Judet.csproj", "{85FFA623-7053-4951-A8E2-128D5014115E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2017Judet", "OlimpiadaC2017Judet\Olimpiada2017Judet.csproj", "{38077AA3-2A84-473D-B179-67EFC4D1BCCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2018National", "Olimpiada2018Nat\Olimpiada2018National.csproj", "{9226192B-176B-4FCF-8F6D-B611C2DAC952}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,18 +19,18 @@ Global
 		{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}.Debug|x86.Build.0 = Debug|x86
 		{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}.Release|x86.ActiveCfg = Release|x86
 		{D9B2ABC1-C9CD-4933-9233-D28F3FFD9B57}.Release|x86.Build.0 = Release|x86
-		{9226192B-176B-4FCF-8F6D-B611C2DAC952}.Debug|x86.ActiveCfg = Debug|x86
-		{9226192B-176B-4FCF-8F6D-B611C2DAC952}.Debug|x86.Build.0 = Debug|x86
-		{9226192B-176B-4FCF-8F6D-B611C2DAC952}.Release|x86.ActiveCfg = Release|x86
-		{9226192B-176B-4FCF-8F6D-B611C2DAC952}.Release|x86.Build.0 = Release|x86
-		{38077AA3-2A84-473D-B179-67EFC4D1BCCC}.Debug|x86.ActiveCfg = Debug|x86
-		{38077AA3-2A84-473D-B179-67EFC4D1BCCC}.Debug|x86.Build.0 = Debug|x86
-		{38077AA3-2A84-473D-B179-67EFC4D1BCCC}.Release|x86.ActiveCfg = Release|x86
-		{38077AA3-2A84-473D-B179-67EFC4D1BCCC}.Release|x86.Build.0 = Release|x86
 		{85FFA623-7053-4951-A8E2-128D5014115E}.Debug|x86.ActiveCfg = Debug|x86
 		{85FFA623-7053-4951-A8E2-128D5014115E}.Debug|x86.Build.0 = Debug|x86
 		{85FFA623-7053-4951-A8E2-128D5014115E}.Release|x86.ActiveCfg = Release|x86
 		{85FFA623-7053-4951-A8E2-128D5014115E}.Release|x86.Build.0 = Release|x86
+		{38077AA3-2A84-473D-B179-67EFC4D1BCCC}.Debug|x86.ActiveCfg = Debug|x86
+		{38077AA3-2A84-473D-B179-67EFC4D1BCCC}.Debug|x86.Build.0 = Debug|x86
+		{38077AA3-2A84-473D-B179-67EFC4D1BCCC}.Release|x86.ActiveCfg = Release|x86
+		{38077AA3-2A84-473D-B179-67EFC4D1BCCC}.Release|x86.Build.0 = Release|x86
+		{9226192B-176B-4FCF-8F6D-B611C2DAC952}.Debug|x86.ActiveCfg = Debug|x86
+		{9226192B-176B-4FCF-8F6D-B611C2DAC952}.Debug|x86.Build.0 = Debug|x86
+		{9226192B-176B-4FCF-8F6D-B611C2DAC952}.Release|x86.ActiveCfg = Release|x86
+		{9226192B-176B-4FCF-8F6D-B611C2DAC952}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

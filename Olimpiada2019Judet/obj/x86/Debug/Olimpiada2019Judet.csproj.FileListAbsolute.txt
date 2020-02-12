@@ -9,3 +9,12 @@ C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olimpia
 C:\Users\vladu\documents\visual studio 2010\Projects\OlimpiadaCsharp2018\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.Forms.LogareFreeBook.resources
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.exe
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.pdb
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\bin\Debug\Olimpiada2019Judet.exe
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\bin\Debug\Olimpiada2019Judet.pdb
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.Forms.CreeazaContFreeBook.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.Forms.FreeBookHome.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.Forms.LogareFreeBook.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.Properties.Resources.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.csproj.GenerateResource.Cache
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.Forms.MeniuFreeBook.resources
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.csprojResolveAssemblyReference.cache

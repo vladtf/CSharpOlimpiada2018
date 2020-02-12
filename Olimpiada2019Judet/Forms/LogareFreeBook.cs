@@ -28,7 +28,9 @@ namespace Olimpiada2019Judet.Forms
             UtilizatorModel utilizator = SqlDataAcces.Logare(SqlDataAcces.ConnectionString, textBox1.Text, textBox4.Text);
             if (utilizator.email == textBox1.Text)
             {
-                MessageBox.Show("Logare cu succes!");
+                this.Close();
+                this.Visible = false;
+                (Owner as FreeBookHome).Autentificat(utilizator);
             }
             else
             {
