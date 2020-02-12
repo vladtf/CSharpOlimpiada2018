@@ -73,6 +73,7 @@ namespace Olimpiada2019Judet.Forms
 
             dataGridView1.Columns[0].Visible = false;
 
+            label1.Text = "Email utilizator : " + utilizator.email;
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             dataGridView1.Columns.Add(btn);
             btn.HeaderText = "Click data";
@@ -208,6 +209,11 @@ namespace Olimpiada2019Judet.Forms
 
             chart2.Series.Add(series);
             chart2.Series[0].IsValueShownAsLabel = true;
+        }
+
+        private void iesireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
