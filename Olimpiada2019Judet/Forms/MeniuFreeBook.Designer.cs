@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -42,10 +45,12 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,6 +60,8 @@
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -181,12 +188,22 @@
             this.tabPage4.Text = "Numar utilizator";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "An imprumut :";
+            // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(10, 32);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(707, 455);
@@ -203,6 +220,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label5);
+            this.tabPage5.Controls.Add(this.chart2);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -211,15 +230,31 @@
             this.tabPage5.Text = "Carti populare";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // chart2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "An imprumut :";
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(6, 94);
+            this.chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(711, 393);
+            this.chart2.TabIndex = 0;
+            this.chart2.Text = "chart2";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(238, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(184, 31);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Carti populare";
             // 
             // MeniuFreeBook
             // 
@@ -241,6 +276,9 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +302,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Label label5;
     }
 }

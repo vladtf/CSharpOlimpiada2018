@@ -37,7 +37,7 @@ namespace Olimpiada2019Judet.Forms
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
-
+            
         }
 
         void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -85,6 +85,7 @@ namespace Olimpiada2019Judet.Forms
         {
             InitializareImprumuturiTable();
             InitializareUtilizatoriTable();
+            InitializareCartiChart();
         }
 
         private void InitializareUtilizatoriTable()
@@ -187,6 +188,26 @@ namespace Olimpiada2019Judet.Forms
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             InitializareUtilizatoriTable();
+        }
+
+        private void InitializareCartiChart()
+        {
+            List<string> carti = SqlDataAcces.GetCartiCitite().OrderBy(x=>x).ToList();
+            var celeMaiCitieCarti = carti.GroupBy(x => x).OrderByDescending(x => x.Count()).Take(4).ToList();
+
+            chart2.Series.Clear();
+
+            Series series = new Series("Carti populare");
+
+            series.ChartType = SeriesChartType.Pie;
+
+            foreach (var item in celeMaiCitieCarti)
+            {
+                series.Points.AddXY(item.First(), item.Count());
+            }
+
+            chart2.Series.Add(series);
+            chart2.Series[0].IsValueShownAsLabel = true;
         }
     }
 }
