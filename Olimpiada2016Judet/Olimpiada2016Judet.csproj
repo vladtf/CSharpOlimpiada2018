@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAcces\InitializareDB.cs" />
     <Compile Include="DataAcces\SqlDataAcces.cs" />
     <Compile Include="Forms\Autentificare_client.cs">
       <SubType>Form</SubType>
@@ -71,6 +72,7 @@
     <Compile Include="Forms\Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\MeniuModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

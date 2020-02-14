@@ -5,6 +5,7 @@ using System.Text;
 using Olimpiada2016Judet.Models;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Olimpiada2016Judet.DataAcces
 {
@@ -14,7 +15,7 @@ namespace Olimpiada2016Judet.DataAcces
 
         public static void RegistrareUtilizator(UserModel utilizator)
         {
-            if(!VerificaEmail(utilizator.Email))
+            if (!VerificaEmail(utilizator.Email))
             {
                 MessageBox.Show("Email deja utilizat!");
                 return;
@@ -50,7 +51,7 @@ namespace Olimpiada2016Judet.DataAcces
 
                 string cmdText = "Select * from Clienti where email = @email";
 
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     cmd.Parameters.AddWithValue("email", email);
 
@@ -79,7 +80,7 @@ namespace Olimpiada2016Judet.DataAcces
 
                 string cmdText = "Select * from clienti where email = @email and parola = @parola;";
 
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     cmd.Parameters.AddWithValue("email", email);
                     cmd.Parameters.AddWithValue("parola", parola);
@@ -102,7 +103,44 @@ namespace Olimpiada2016Judet.DataAcces
                     }
                 }
             }
- 
         }
+
+        public static DataTable GetMeniu()
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Select * from Meniu";
+
+                DataTable table = new DataTable();
+
+                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                {
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(table);
+
+                        return table;
+                    }
+                }
+            }
+        }
+
+        public static void ClearDB()
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Delete from Meniu";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

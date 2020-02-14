@@ -30,6 +30,7 @@ namespace Olimpiada2016Judet.Forms
             else
             {
                 var page = new Optiuni(utilizator);
+                (Owner as Start).Visible = false;
                 page.Show();
                 this.Close();
             }

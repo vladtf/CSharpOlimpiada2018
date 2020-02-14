@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Olimpiada2016Judet.Forms;
+using Olimpiada2016Judet.DataAcces;
 
 namespace Olimpiada2016Judet
 {
@@ -14,6 +15,8 @@ namespace Olimpiada2016Judet
         [STAThread]
         static void Main()
         {
+            InitializareDB.Initializare();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Start());
