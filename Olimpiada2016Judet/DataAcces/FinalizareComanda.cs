@@ -8,7 +8,7 @@ namespace Olimpiada2016Judet.DataAcces
 {
     public class FinalizareComanda
     {
-        public static FinalizareComanda(int idClient, int idProdus, int cantitate)
+        public static void Finalizare(int idClient, List<int> idProduse, List<int> cantitati)
         {
             using (SqlConnection con = new SqlConnection(SqlDataAcces.ConnectionString))
             {
@@ -26,13 +26,18 @@ namespace Olimpiada2016Judet.DataAcces
 
                 int idComanda = IdComanda(data, idClient);
 
-                cmdText = "Insert into Comenzi( id_comanda, id_produs, cantitate) values (@id_comanda, @id_produs, @id_cantitate)";
+                cmdText = "Insert into Subcomenzi( id_comanda, id_produs, cantitate) values (@id_comanda, @id_produs, @id_cantitate)";
 
-                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                for (int i = 0; i < idProduse.Count; i++)
                 {
-                    cmd.Parameters.AddWithValue("id_comanda", idComanda);
-                    cmd.Parameters.AddWithValue("id_produs", idClient);
-                    cmd.Parameters.AddWithValue("id_cantitate", cantitate);
+                    using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                    {
+                        cmd.Parameters.AddWithValue("id_comanda", idComanda);
+                        cmd.Parameters.AddWithValue("id_produs", idProduse[i]);
+                        cmd.Parameters.AddWithValue("id_cantitate", cantitati[i]);
+
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
 
@@ -47,7 +52,7 @@ namespace Olimpiada2016Judet.DataAcces
                 con.Open();
                 string cmdText = "Select id_comanda from Comenzi where id_client = @idClient and data_comanda = @data";
 
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     cmd.Parameters.AddWithValue("idClient", idClient);
                     cmd.Parameters.AddWithValue("data", data);
@@ -59,7 +64,7 @@ namespace Olimpiada2016Judet.DataAcces
                     }
                 }
             }
- 
+
         }
     }
 

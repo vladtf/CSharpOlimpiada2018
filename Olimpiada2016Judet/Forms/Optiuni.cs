@@ -128,6 +128,7 @@ namespace Olimpiada2016Judet.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             DataTable table = new DataTable();
+            table.Columns.Add("idProdus");
             table.Columns.Add("Nume Produs");
             table.Columns.Add("Kcal");
             table.Columns.Add("Pret");
@@ -139,10 +140,11 @@ namespace Olimpiada2016Judet.Forms
                 {
                     DataRow newRow = table.NewRow();
 
-                    newRow[0] = row.Cells["denumire_produs"].Value;
-                    newRow[1] = row.Cells["kcal"].Value;
-                    newRow[2] = row.Cells["pret"].Value;
-                    newRow[3] = row.Cells["cantitate"].Value;
+                    newRow[0] = row.Cells["id_produs"].Value;
+                    newRow[1] = row.Cells["denumire_produs"].Value;
+                    newRow[2] = row.Cells["kcal"].Value;
+                    newRow[3] = row.Cells["pret"].Value;
+                    newRow[4] = row.Cells["cantitate"].Value;
 
                     table.Rows.Add(newRow);
                 }
@@ -150,7 +152,7 @@ namespace Olimpiada2016Judet.Forms
 
             if (table.Rows.Count > 0)
             {
-                var page = new Vizualizare_Comanda(table, textBox7.Text, textBox6.Text, textBox5.Text);
+                var page = new Vizualizare_Comanda(table, textBox7.Text, textBox6.Text, textBox5.Text, utilizator.Id);
                 page.Show();
                 this.Close();
             }

@@ -6,13 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Olimpiada2016Judet.DataAcces;
 
 namespace Olimpiada2016Judet.Forms
 {
     public partial class Vizualizare_Comanda : Form
     {
-        public Vizualizare_Comanda(DataTable table, string necesar, string kcal, string pret)
+        int idClient;
+        public Vizualizare_Comanda(DataTable table, string necesar, string kcal, string pret, int idClient)
         {
+            this.idClient = idClient;
+
             InitializeComponent();
 
             dataGridView1.DataSource = table;
@@ -31,6 +35,8 @@ namespace Olimpiada2016Judet.Forms
             dataGridView1.Columns.Add(btn);
 
             dataGridView1.ReadOnly = true;
+
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,6 +66,27 @@ namespace Olimpiada2016Judet.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            List<int> cantitati = new List<int>();
+            List<int> idProduse = new List<int>();
+
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                try
+                {
+
+                    cantitati.Add(int.Parse((string)item.Cells["Cantitate"].Value));
+                    idProduse.Add(int.Parse((string)item.Cells["idProdus"].Value));
+                }
+                catch { }
+            }
+
+            FinalizareComanda.Finalizare(idClient, idProduse, cantitati);
+
+            MessageBox.Show("Comanda trimisa!");
+
+            Start.GetInsance().Show();
+
+            this.Close();
 
         }
     }
