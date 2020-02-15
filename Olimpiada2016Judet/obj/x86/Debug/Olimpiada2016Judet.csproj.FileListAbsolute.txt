@@ -8,3 +8,5 @@ C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada20
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2016Judet\obj\x86\Debug\Olimpiada2016Judet.pdb
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2016Judet\obj\x86\Debug\Olimpiada2016Judet.Forms.Autentificare_client.resources
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2016Judet\obj\x86\Debug\Olimpiada2016Judet.Forms.Optiuni.resources
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2016Judet\obj\x86\Debug\Olimpiada2016Judet.csprojResolveAssemblyReference.cache
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2016Judet\obj\x86\Debug\Olimpiada2016Judet.Forms.Vizualizare_Comanda.resources

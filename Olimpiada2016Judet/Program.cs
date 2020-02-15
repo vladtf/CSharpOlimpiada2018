@@ -19,7 +19,8 @@ namespace Olimpiada2016Judet
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Start());
+            Application.Run(Start.GetInsance());
+
         }
     }
 }

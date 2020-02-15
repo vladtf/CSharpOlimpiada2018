@@ -44,7 +44,15 @@ namespace Olimpiada2016Judet.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int s = int.Parse(textBox1.Text) + int.Parse(textBox2.Text) + int.Parse(textBox3.Text);
+            int s = 0;
+            try
+            {
+                s = int.Parse(textBox1.Text) + int.Parse(textBox2.Text) + int.Parse(textBox3.Text);
+            }
+            catch (Exception)
+            {
+
+            }
 
             if (s < 250)
             {
@@ -95,12 +103,14 @@ namespace Olimpiada2016Judet.Forms
                 {
                     dgv.Rows[row].DefaultCellStyle.BackColor = Color.Green;
 
-                    int calCurr = textBox6.Text !="" ? int.Parse(textBox6.Text) : 0;
-                    textBox6.Text = (calCurr + kcal*cantitate).ToString();
+                    int calCurr = textBox6.Text != "" ? int.Parse(textBox6.Text) : 0;
+                    textBox6.Text = (calCurr + kcal * cantitate).ToString();
+                    dgv["kcal", row].Value = kcal * cantitate;
 
                     int pretCurr = textBox5.Text != "" ? int.Parse(textBox6.Text) : 0;
                     textBox5.Text = (pretCurr + cantitate * pret).ToString();
- 
+                    dgv["pret", row].Value = pret * cantitate;
+
                 }
                 else
                 {
@@ -113,6 +123,41 @@ namespace Olimpiada2016Judet.Forms
         private void tabControl1_Click(object sender, EventArgs e)
         {
             textBox7.Text = textBox4.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Nume Produs");
+            table.Columns.Add("Kcal");
+            table.Columns.Add("Pret");
+            table.Columns.Add("Cantitate");
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.DefaultCellStyle.BackColor == Color.Green)
+                {
+                    DataRow newRow = table.NewRow();
+
+                    newRow[0] = row.Cells["denumire_produs"].Value;
+                    newRow[1] = row.Cells["kcal"].Value;
+                    newRow[2] = row.Cells["pret"].Value;
+                    newRow[3] = row.Cells["cantitate"].Value;
+
+                    table.Rows.Add(newRow);
+                }
+            }
+
+            if (table.Rows.Count > 0)
+            {
+                var page = new Vizualizare_Comanda(table, textBox7.Text, textBox6.Text, textBox5.Text);
+                page.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Comanda esuata!");
+            }
         }
 
 

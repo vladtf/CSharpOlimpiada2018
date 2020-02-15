@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Olimpiada2016Judet.Models
 {
-    public class MeniuModel
+    public class MeniuModel 
     {
         public int Id { get; set; }
         public string DenumereaProdus { get; set; }

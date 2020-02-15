@@ -17,6 +17,8 @@ namespace Olimpiada2016Judet.Forms
             InitializeComponent();
 
             textBox2.PasswordChar = '*';
+
+            textBox1.Text = textBox2.Text = "asd";
         }
 
         private void button2_Click(object sender, EventArgs e)

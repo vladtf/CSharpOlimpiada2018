@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAcces\FinalizareComanda.cs" />
     <Compile Include="DataAcces\InitializareDB.cs" />
     <Compile Include="DataAcces\SqlDataAcces.cs" />
     <Compile Include="Forms\Autentificare_client.cs">
@@ -72,6 +73,12 @@
     <Compile Include="Forms\Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Vizualizare_Comanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vizualizare_Comanda.Designer.cs">
+      <DependentUpon>Vizualizare_Comanda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\MeniuModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
@@ -87,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vizualizare_Comanda.resx">
+      <DependentUpon>Vizualizare_Comanda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

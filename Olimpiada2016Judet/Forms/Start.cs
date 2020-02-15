@@ -11,6 +11,8 @@ namespace Olimpiada2016Judet.Forms
 {
     public partial class Start : Form
     {
+        private static Start instance;
+
         public Start()
         {
             InitializeComponent();
@@ -26,6 +28,13 @@ namespace Olimpiada2016Judet.Forms
         {
             var page = new Autentificare_client();
             page.ShowDialog(this);
+        }
+
+        public static Start GetInsance()
+        {
+            if (instance == null)
+                instance = new Start();
+            return instance;
         }
     }
 }
