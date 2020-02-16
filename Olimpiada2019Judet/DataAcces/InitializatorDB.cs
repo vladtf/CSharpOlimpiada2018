@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
-using System.IO;
 using System.Globalization;
+using System.IO;
 
 namespace Olimpiada2019Judet.DataAcces
 {
@@ -19,7 +16,7 @@ namespace Olimpiada2019Judet.DataAcces
                 con.Open();
 
                 string filePath = "Resurse//carti.txt";
-                string cmdText= "Insert into carti (id_carte,titlu,autor,gen) values (@id,@titlu,@autor,@gen);";
+                string cmdText = "Insert into carti (id_carte,titlu,autor,gen) values (@id,@titlu,@autor,@gen);";
                 using (StreamReader reader = new StreamReader(filePath))
                 {
                     int i = 0;
@@ -27,7 +24,7 @@ namespace Olimpiada2019Judet.DataAcces
                     {
                         i++;
                         var line = reader.ReadLine().Split('*');
-                        using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                        using (SqlCommand cmd = new SqlCommand(cmdText, con))
                         {
                             cmd.Parameters.AddWithValue("id", i);
                             cmd.Parameters.AddWithValue("titlu", line[0]);
@@ -91,7 +88,6 @@ namespace Olimpiada2019Judet.DataAcces
                     }
                 }
             }
- 
         }
 
         private static void ClearDB(string connectionString)
@@ -101,7 +97,7 @@ namespace Olimpiada2019Judet.DataAcces
                 con.Open();
 
                 string cmdText = "Delete from carti";
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     cmd.ExecuteNonQuery();
                 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
+﻿using Olipmpiada2018Judet.Forms;
+using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Olipmpiada2018Judet.Forms;
 
 namespace Olipmpiada2018Judet.ItemsControl
 {
@@ -24,13 +21,12 @@ namespace Olipmpiada2018Judet.ItemsControl
         public ItemTip3()
         {
             InitializeComponent();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string raspuns = "";
-            string raspunsCorect = String.Join("",RaspunsCorect.Select(x => x).Reverse());
+            string raspunsCorect = String.Join("", RaspunsCorect.Select(x => x).Reverse());
             foreach (var c in groupBox1.Controls)
             {
                 if (c is CheckBox)
@@ -65,6 +61,5 @@ namespace Olipmpiada2018Judet.ItemsControl
             checkBox3.Text = Var3;
             checkBox4.Text = Var4;
         }
-
     }
 }

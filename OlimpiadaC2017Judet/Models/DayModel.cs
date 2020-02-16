@@ -11,7 +11,6 @@ namespace OlimpiadaCSharp.Models
         public string Frecvneta { get; set; }
         public int Ziua { get; set; }
 
-
         //transforma un rand din tabela in DayModel
         //generatoare de excpetii!?!
         public static DayModel Parse(DataRow initial)
@@ -31,7 +30,6 @@ namespace OlimpiadaCSharp.Models
             }
 
             return rez;
-
         }
 
         //parseaza in daymodel din tabela de itinerariu deja procesata
@@ -45,8 +43,6 @@ namespace OlimpiadaCSharp.Models
             rez.DataStop = (DateTime)initial[2];
 
             return rez;
-
         }
-
     }
 }

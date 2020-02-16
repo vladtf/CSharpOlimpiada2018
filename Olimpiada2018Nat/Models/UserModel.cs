@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace OlimpiadaCsharp2018.Models
+﻿namespace OlimpiadaCsharp2018.Models
 {
     public class UserModel
     {

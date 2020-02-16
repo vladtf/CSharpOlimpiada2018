@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using Olimpiada2016Judet.DataAcces;
 using Olimpiada2016Judet.Models;
-using Olimpiada2016Judet.DataAcces;
+using System;
+using System.Windows.Forms;
 
 namespace Olimpiada2016Judet.Forms
 {
@@ -23,7 +17,7 @@ namespace Olimpiada2016Judet.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox4.Text == textBox5.Text)
-            { 
+            {
                 UserModel utilizator = new UserModel
                 {
                     Parola = textBox4.Text,
@@ -39,7 +33,6 @@ namespace Olimpiada2016Judet.Forms
             {
                 MessageBox.Show("Confirmare parola a esuat!");
             }
-
         }
     }
 }

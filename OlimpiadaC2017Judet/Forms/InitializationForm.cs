@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using OlimpiadaCSharp.Forms;
+﻿using OlimpiadaCSharp.Forms;
 using OlimpiadaCSharp.Helpers;
+using System;
+using System.Windows.Forms;
 
 namespace OlimpiadaCSharp
 {
@@ -12,7 +12,7 @@ namespace OlimpiadaCSharp
         private string connectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\OlimpiadaCSharp.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
         private string filePath = "planificari.txt";
 
-        #endregion
+        #endregion Field declarations
 
         public Initializationform()
         {
@@ -31,7 +31,6 @@ namespace OlimpiadaCSharp
             }
             catch (Exception exception)
             {
-
                 MessageBox.Show(exception.Message, "Eroare initializare");
             }
         }

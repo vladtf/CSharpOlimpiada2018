@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Olimpiada2016Judet.Models;
+﻿using Olimpiada2016Judet.Models;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Data;
 
 namespace Olimpiada2016Judet.DataAcces
 {
-    class SqlDataAcces
+    internal class SqlDataAcces
     {
         public static string ConnectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\GOOD_FOOD.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
 
@@ -37,10 +33,8 @@ namespace Olimpiada2016Judet.DataAcces
                     cmd.Parameters.AddWithValue("email", utilizator.Parola);
 
                     cmd.ExecuteNonQuery();
-
                 }
             }
-
         }
 
         public static bool VerificaEmail(string email)
@@ -115,7 +109,7 @@ namespace Olimpiada2016Judet.DataAcces
 
                 DataTable table = new DataTable();
 
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
@@ -135,12 +129,11 @@ namespace Olimpiada2016Judet.DataAcces
 
                 string cmdText = "Delete from Meniu";
 
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     cmd.ExecuteNonQuery();
                 }
             }
         }
-
     }
 }

@@ -1,10 +1,7 @@
-﻿using System;
+﻿using Olipmpiada2018Judet.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Olipmpiada2018Judet.Models;
 using System.Data.SqlClient;
-using System.Data;
 
 namespace Olipmpiada2018Judet.DataAcces
 {
@@ -122,7 +119,7 @@ namespace Olipmpiada2018Judet.DataAcces
 
                 string cmdText = "Insert into Evaluari(IdElev, DataEvaluare, NotaEvaluare) values (@idelev, @data, @nota);";
 
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     cmd.Parameters.AddWithValue("idelev", IdUtilizator);
                     cmd.Parameters.AddWithValue("data", DateTime.Now);
@@ -130,9 +127,7 @@ namespace Olipmpiada2018Judet.DataAcces
 
                     cmd.ExecuteNonQuery();
                 }
-
             }
         }
-
     }
 }

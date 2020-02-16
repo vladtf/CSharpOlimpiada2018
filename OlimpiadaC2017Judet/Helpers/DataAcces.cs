@@ -1,9 +1,9 @@
-﻿using System;
+﻿using OlimpiadaCSharp.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
-using OlimpiadaCSharp.Models;
 
 namespace OlimpiadaCSharp.Helpers
 {
@@ -33,7 +33,6 @@ namespace OlimpiadaCSharp.Helpers
                         location.Localitate = Nume;
 
                         locations.Add(location);
-
                     }
                 }
             }
@@ -76,18 +75,20 @@ namespace OlimpiadaCSharp.Helpers
                         case "ocazional":
                             InsterOcazional(tokens, connectionString);
                             break;
+
                         case "anual":
                             InsertOthers(tokens, connectionString);
                             break;
+
                         case "lunar":
                             InsertOthers(tokens, connectionString);
                             break;
+
                         default:
                             break;
                     }
                 }
             }
-
         }
 
         private static void InsertOthers(string[] tokens, string connectionString)
@@ -154,7 +155,6 @@ namespace OlimpiadaCSharp.Helpers
                 }
             }
         }
-
 
         private static void InsertLocalitate(string connectionString, string localitate)
         {

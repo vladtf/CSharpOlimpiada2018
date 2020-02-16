@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 
 namespace OlimpiadaCsharp2018.Helpers
 {
@@ -39,7 +38,7 @@ namespace OlimpiadaCsharp2018.Helpers
                 }
             }
 
-            return listOamnei.Select(x=>Int32.Parse(x)).ToList();
+            return listOamnei.Select(x => Int32.Parse(x)).ToList();
         }
     }
 }

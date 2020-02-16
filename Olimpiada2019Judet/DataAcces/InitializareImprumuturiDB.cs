@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Forms;
-using System.Drawing;
 
 namespace Olimpiada2019Judet.DataAcces
 {
@@ -14,7 +8,7 @@ namespace Olimpiada2019Judet.DataAcces
         public static DataTable GetTable(string connectionString)
         {
             DataTable tb = new DataTable();
-            
+
             tb.Columns.Add("id_carte");
             tb.Columns.Add("titlu");
             tb.Columns.Add("autor");
@@ -27,7 +21,7 @@ namespace Olimpiada2019Judet.DataAcces
             {
                 con.Open();
                 string cmdText = "Select * from carti";
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
@@ -36,12 +30,10 @@ namespace Olimpiada2019Judet.DataAcces
                 }
             }
 
-
             //for (int i = 0; i < tb.Rows.Count; i++)
             //{
             //    tb.Rows[i].
             //}
-
 
             return tb;
         }

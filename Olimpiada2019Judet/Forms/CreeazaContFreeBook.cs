@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using Olimpiada2019Judet.DataAcces;
 using Olimpiada2019Judet.Models;
-using Olimpiada2019Judet.DataAcces;
+using System;
+using System.Windows.Forms;
 
 namespace Olimpiada2019Judet.Forms
 {
@@ -30,7 +24,7 @@ namespace Olimpiada2019Judet.Forms
                     nume = textBox2.Text,
                     prenume = textBox3.Text,
                     parola = textBox4.Text
-                }; 
+                };
                 try
                 {
                     SqlDataAcces.Registrare(SqlDataAcces.ConnectionString, utilizator);
@@ -42,7 +36,6 @@ namespace Olimpiada2019Judet.Forms
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("Email-ul este deja utilizat!");
                 }
             }

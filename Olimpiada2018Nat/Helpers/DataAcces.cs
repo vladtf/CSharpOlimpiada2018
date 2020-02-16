@@ -1,11 +1,7 @@
-﻿using System;
+﻿using OlimpiadaCsharp2018.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using OlimpiadaCsharp2018.Models;
 using System.Data.SqlClient;
-using System.IO;
-using System.Data;
 
 namespace OlimpiadaCsharp2018.Helpers
 {
@@ -22,7 +18,7 @@ namespace OlimpiadaCsharp2018.Helpers
                 con.Open();
 
                 string cmdText = "Select * from Lectii";
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {

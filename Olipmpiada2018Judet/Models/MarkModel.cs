@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Olipmpiada2018Judet.Models
 {
@@ -11,6 +10,7 @@ namespace Olipmpiada2018Judet.Models
         public DateTime Data { get; set; }
 
         public static List<int> ToateNotele = new List<int>();
+
         public static int NotaMedie
         {
             get

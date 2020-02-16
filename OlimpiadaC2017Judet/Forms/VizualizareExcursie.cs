@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OlimpiadaCSharp.Helpers;
+using OlimpiadaCSharp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,8 +8,6 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using OlimpiadaCSharp.Helpers;
-using OlimpiadaCSharp.Models;
 
 namespace OlimpiadaCSharp.Forms
 {
@@ -57,7 +57,6 @@ namespace OlimpiadaCSharp.Forms
                     }
                 }
             }
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -65,7 +64,6 @@ namespace OlimpiadaCSharp.Forms
             string selectStatement = "Select Nume,DataStart,DataStop,Frecventa,Ziua " +
                                      "from Planificari p ,Localitati l " +
                                      "where p.IDLocalitate = l.IDLocalitate";
-
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -94,7 +92,6 @@ namespace OlimpiadaCSharp.Forms
                             DataTable itinerariu = new DataTable();
                             itinerariu.Columns.Add("Localitate", typeof(string));
                             itinerariu.Columns.Add("Data", typeof(DateTime));
-
 
                             dataGridView3.DataSource = FillVizualizareItinerariu.Fill(newTable, itinerariu);
                             dataGridView3.Columns["Image"].Visible = false;
@@ -134,8 +131,7 @@ namespace OlimpiadaCSharp.Forms
             }
         }
 
-
-        void timer_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
             if (progressBar1.Value < progressBar1.Maximum - 1)
             {
@@ -158,6 +154,5 @@ namespace OlimpiadaCSharp.Forms
             base.OnClosed(e);
             timer.Stop();
         }
-
     }
 }

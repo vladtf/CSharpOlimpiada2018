@@ -1,32 +1,30 @@
-﻿using System;
+﻿using OlimpiadaCsharp2018.Helpers;
+using OlimpiadaCsharp2018.Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using OlimpiadaCsharp2018.Models;
-using OlimpiadaCsharp2018.Helpers;
 
 namespace OlimpiadaCsharp2018.Forms
 {
     public partial class VizualizareLectii : Form
     {
         private List<LectieModel> lectii;
- 
+
         public VizualizareLectii()
         {
             InitializeComponent();
             lectii = DataAcces.GetLectii();
-            listBox1.Items.AddRange(lectii.Select(x=>x.NumeImagine.Split('.')[0]).ToArray());
+            listBox1.Items.AddRange(lectii.Select(x => x.NumeImagine.Split('.')[0]).ToArray());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem != null)
             {
-                LectieModel lectiaSelectata = lectii.Find(x => x.IdLectie == listBox1.SelectedIndex+1);
+                LectieModel lectiaSelectata = lectii.Find(x => x.IdLectie == listBox1.SelectedIndex + 1);
                 Bitmap imageToDisplay = new Bitmap("ContinutLectii\\" + lectiaSelectata.NumeImagine);
                 pictureBox1.Image = imageToDisplay;
 
@@ -42,6 +40,5 @@ namespace OlimpiadaCsharp2018.Forms
                 MessageBox.Show("Selectati lectia!");
             }
         }
-
     }
 }

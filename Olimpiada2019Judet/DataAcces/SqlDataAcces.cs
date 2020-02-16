@@ -1,8 +1,6 @@
-﻿using System;
+﻿using Olimpiada2019Judet.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Olimpiada2019Judet.Models;
 using System.Data.SqlClient;
 
 namespace Olimpiada2019Judet.DataAcces
@@ -29,6 +27,7 @@ namespace Olimpiada2019Judet.DataAcces
                 }
             }
         }
+
         public static UtilizatorModel Logare(string connectionStrin, string email, string parola)
         {
             UtilizatorModel utilizator = new UtilizatorModel();
@@ -54,7 +53,6 @@ namespace Olimpiada2019Judet.DataAcces
                                 prenume = (string)rdr["prenume"]
                             };
                         }
-                        
                     }
                 }
             }
@@ -72,7 +70,7 @@ namespace Olimpiada2019Judet.DataAcces
                 DateTime data = DateTime.Now.AddDays(-30);
                 string cmdText = "Select * from imprumut where email = @email and data_imprumut > @data";
 
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     cmd.Parameters.AddWithValue("email", utilizator.email);
                     cmd.Parameters.AddWithValue("data", data);
@@ -98,7 +96,7 @@ namespace Olimpiada2019Judet.DataAcces
                 string cmdText = "Insert into imprumut ( id_carte, email, data_imprumut ) values " +
                     "(@idCarte, @email, @data)";
 
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     DateTime data = DateTime.Now;
 
@@ -139,7 +137,6 @@ namespace Olimpiada2019Judet.DataAcces
                                 Autor = (string)reader[2],
                                 DataImprumut = date,
                                 DataDisponibilitate = date.AddDays(30)
-
                             };
                             imprumuturi.Add(imprumut);
                         }
@@ -177,7 +174,6 @@ namespace Olimpiada2019Judet.DataAcces
                                 Autor = (string)reader[2],
                                 DataImprumut = date,
                                 DataDisponibilitate = date.AddDays(30)
-
                             };
                             imprumuturi.Add(imprumut);
                         }
@@ -187,7 +183,6 @@ namespace Olimpiada2019Judet.DataAcces
             return imprumuturi;
         }
 
-
         public static List<String> GetCartiCitite()
         {
             List<string> carti = new List<string>();
@@ -196,7 +191,7 @@ namespace Olimpiada2019Judet.DataAcces
             {
                 con.Open();
                 string cmdText = "Select Titlu from carti c, imprumut i where c.id_carte = i.id_carte;";
-                using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using Olimpiada2016Judet.Models;
+﻿using Olimpiada2016Judet.Models;
 using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
 
 namespace Olimpiada2016Judet.DataAcces
 {
@@ -12,7 +9,6 @@ namespace Olimpiada2016Judet.DataAcces
     {
         public static void Initializare()
         {
-
             SqlDataAcces.ClearDB();
             string filePath = "Resurse\\meniu.txt";
 
@@ -24,7 +20,7 @@ namespace Olimpiada2016Judet.DataAcces
                 {
                     var line = reader.ReadLine().Split(';').ToList();
 
-                    if (line[0]=="")
+                    if (line[0] == "")
                     {
                         break;
                     }
@@ -45,7 +41,7 @@ namespace Olimpiada2016Judet.DataAcces
                         string cmdText = "Insert into Meniu (id_produs, denumire_produs, descriere, pret, kcal, felul) " +
                             "Values (@id, @nume, @descriere, @pret, @kcal, @felul) ;";
 
-                        using (SqlCommand cmd = new SqlCommand(cmdText,con))
+                        using (SqlCommand cmd = new SqlCommand(cmdText, con))
                         {
                             cmd.Parameters.AddWithValue("id", meniu.Id);
                             cmd.Parameters.AddWithValue("nume", meniu.DenumereaProdus);
@@ -57,10 +53,8 @@ namespace Olimpiada2016Judet.DataAcces
                             cmd.ExecuteNonQuery();
                         }
                     }
-
                 }
             }
-
         }
     }
 }

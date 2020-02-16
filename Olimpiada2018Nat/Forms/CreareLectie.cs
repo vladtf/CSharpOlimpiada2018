@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace OlimpiadaCsharp2018.Forms
@@ -39,14 +35,13 @@ namespace OlimpiadaCsharp2018.Forms
 
         private void button11_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             try
             {
-            tableLayoutPanel1.Controls.Add(new TextBox {Multiline = true, Size = new Size(100,100) });
+                tableLayoutPanel1.Controls.Add(new TextBox { Multiline = true, Size = new Size(100, 100) });
             }
             catch (Exception)
             {
@@ -56,7 +51,7 @@ namespace OlimpiadaCsharp2018.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //tableLayoutPanel1.Width = 
+            //tableLayoutPanel1.Width =
         }
     }
 }

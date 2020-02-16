@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Data.SqlClient;
 using System.IO;
-using System.Data.SqlClient;
 
 namespace Olipmpiada2018Judet.DataAcces
 {
-    class InitializeFromFile
+    internal class InitializeFromFile
     {
         public static void Initialize()
         {
@@ -43,11 +39,11 @@ namespace Olipmpiada2018Judet.DataAcces
 
                         line = reader.ReadLine();
                         i++;
-                    } 
-                    
+                    }
+
                     line = reader.ReadLine();
                     i = 1;
-                    while (reader.Peek()>=0)
+                    while (reader.Peek() >= 0)
                     {
                         string[] tokens = line.Split(';');
 
@@ -56,14 +52,11 @@ namespace Olipmpiada2018Judet.DataAcces
                         line = reader.ReadLine();
                         i++;
                     }
-
-
                 }
             }
         }
 
-
-        private static void UtilizatoriTable(string[] tokens,int id)
+        private static void UtilizatoriTable(string[] tokens, int id)
         {
             using (SqlConnection con = new SqlConnection(SqlDataAcces.ConnectionString))
             {

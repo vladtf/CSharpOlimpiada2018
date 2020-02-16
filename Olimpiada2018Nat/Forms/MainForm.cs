@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using OlimpiadaCsharp2018.Forms;
 using OlimpiadaCsharp2018.Helpers;
-using OlimpiadaCsharp2018.Forms;
+using System;
+using System.Windows.Forms;
 
 namespace OlimpiadaCsharp2018
 {
@@ -50,9 +44,5 @@ namespace OlimpiadaCsharp2018
             page.Show();
             this.Hide();
         }
-
-
-
-
     }
 }

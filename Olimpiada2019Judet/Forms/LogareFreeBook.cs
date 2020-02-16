@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using Olimpiada2019Judet.DataAcces;
 using Olimpiada2019Judet.Models;
-using Olimpiada2019Judet.DataAcces;
+using System;
+using System.Windows.Forms;
 
 namespace Olimpiada2019Judet.Forms
 {

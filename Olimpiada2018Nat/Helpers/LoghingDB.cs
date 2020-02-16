@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using OlimpiadaCsharp2018.Models;
 using System.Data.SqlClient;
-using OlimpiadaCsharp2018.Models;
 
 namespace OlimpiadaCsharp2018.Helpers
 {
@@ -11,7 +7,7 @@ namespace OlimpiadaCsharp2018.Helpers
     {
         public static UserModel Autentificare(string email)
         {
-            using( SqlConnection con = new SqlConnection(DataAcces.ConnectionString))
+            using (SqlConnection con = new SqlConnection(DataAcces.ConnectionString))
             {
                 con.Open();
                 string cmdText = "Select * from Utilizatori where Convert(VarChar,Email) = @email";
@@ -41,6 +37,7 @@ namespace OlimpiadaCsharp2018.Helpers
                 }
             }
         }
+
         public static void SalvareParolaNoua(string parolaNoua, string email)
         {
             using (SqlConnection con = new SqlConnection(DataAcces.ConnectionString))

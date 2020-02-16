@@ -1,12 +1,12 @@
-﻿using System;
+﻿using OlimpiadaCSharp.Helpers;
+using OlimpiadaCSharp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Windows.Forms;
-using OlimpiadaCSharp.Helpers;
-using OlimpiadaCSharp.Models;
 
 namespace OlimpiadaCSharp.Forms
 {
@@ -36,7 +36,6 @@ namespace OlimpiadaCSharp.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             var selectedLocation = (sender as ComboBox).SelectedItem as string;
 
             images = DataAcces.GetImages(locations.Find(x => x.Localitate == selectedLocation).Id);
@@ -56,12 +55,12 @@ namespace OlimpiadaCSharp.Forms
                     listView1.Items.Add(selectedItemText);
 
                     string filePath = @"Imagini\" + selectedItemText;
-                    
-                    Bitmap bmp = new Bitmap(filePath);
-                    int newWidth = (600*bmp.Width)/bmp.Height;
-                    Bitmap bmpResized = new Bitmap(bmp, newWidth,600);
 
-                    tableLayoutPanel1.Controls.Add(new Panel {BackgroundImage = bmpResized, BackgroundImageLayout = ImageLayout.Zoom });
+                    Bitmap bmp = new Bitmap(filePath);
+                    int newWidth = (600 * bmp.Width) / bmp.Height;
+                    Bitmap bmpResized = new Bitmap(bmp, newWidth, 600);
+
+                    tableLayoutPanel1.Controls.Add(new Panel { BackgroundImage = bmpResized, BackgroundImageLayout = ImageLayout.Zoom });
 
                     int width = newWidth;
                     if (pictureDisplayed != null)
@@ -71,7 +70,7 @@ namespace OlimpiadaCSharp.Forms
 
                     int height = 600;
 
-                    Bitmap newPicture = new Bitmap(width,height);
+                    Bitmap newPicture = new Bitmap(width, height);
                     using (Graphics gr = Graphics.FromImage(newPicture))
                     {
                         if (pictureDisplayed != null)
@@ -83,13 +82,11 @@ namespace OlimpiadaCSharp.Forms
                         {
                             gr.DrawImage(bmpResized, 0, 0);
                         }
- 
                     }
 
                     pictureDisplayed = newPicture;
                     pictureBox1.Image = pictureDisplayed;
                 }
-
             }
         }
 
@@ -102,14 +99,12 @@ namespace OlimpiadaCSharp.Forms
 
             Bitmap newBit = new Bitmap(width, height);
 
-            tableLayoutPanel1.DrawToBitmap(newBit, new Rectangle(0,0, width,height));
+            tableLayoutPanel1.DrawToBitmap(newBit, new Rectangle(0, 0, width, height));
 
-            if(sfd1.ShowDialog() == DialogResult.OK)
+            if (sfd1.ShowDialog() == DialogResult.OK)
             {
                 newBit.Save(sfd1.FileName, ImageFormat.Bmp);
             }
-
-
 
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.FileName = textBox1.Text;
@@ -123,6 +118,7 @@ namespace OlimpiadaCSharp.Forms
                     case ".jpg":
                         format = ImageFormat.Jpeg;
                         break;
+
                     case ".bmp":
                         format = ImageFormat.Bmp;
                         break;

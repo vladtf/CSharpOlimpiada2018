@@ -1,16 +1,14 @@
-﻿using System;
+﻿using Olipmpiada2018Judet.DataAcces;
+using Olipmpiada2018Judet.ItemsControl;
+using Olipmpiada2018Judet.Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Olipmpiada2018Judet.Models;
-using Olipmpiada2018Judet.DataAcces;
-using Olipmpiada2018Judet.ItemsControl;
-using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing.Printing;
+using System.Linq;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Olipmpiada2018Judet.Forms
 {
@@ -20,6 +18,7 @@ namespace Olipmpiada2018Judet.Forms
         private List<ResponModel> raspunsuri = new List<ResponModel>();
         private List<ItemModel> items;
         public UserModel UserLoged { get; set; }
+
         public eLearning_Elev()
         {
             InitializeComponent();
@@ -58,7 +57,6 @@ namespace Olipmpiada2018Judet.Forms
             items.Add(itemTip3[r.Next(0, itemTip3.Count() - 1)]);
             items.Add(itemTip4[r.Next(0, itemTip4.Count() - 1)]);
 
-
             items.Add(itemTip1.Find(x => !items.Contains(x)));
             items.Add(itemTip2.Find(x => !items.Contains(x)));
             items.Add(itemTip3.Find(x => !items.Contains(x)));
@@ -69,7 +67,6 @@ namespace Olipmpiada2018Judet.Forms
             {
                 CreateNewItemPage(item);
             }
-
         }
 
         private void CreateNewItemPage(ItemModel item)
@@ -79,17 +76,18 @@ namespace Olipmpiada2018Judet.Forms
             {
                 case 1:
                     ItemTip1 item1 = new ItemTip1
-                {
-                    RaspunsCorect = item.RaspunscorectItem,
-                    NrItem = index,
-                    EnuntItem = item.EnuntItem,
-                    Tag = this,
-                    Dock = DockStyle.Fill
-                };
-                    TabPage tp1 = new TabPage("Item "+index);
+                    {
+                        RaspunsCorect = item.RaspunscorectItem,
+                        NrItem = index,
+                        EnuntItem = item.EnuntItem,
+                        Tag = this,
+                        Dock = DockStyle.Fill
+                    };
+                    TabPage tp1 = new TabPage("Item " + index);
                     tabControl2.TabPages.Add(tp1);
                     tp1.Controls.Add(item1);
                     break;
+
                 case 2:
                     ItemTip2 item2 = new ItemTip2
                     {
@@ -107,6 +105,7 @@ namespace Olipmpiada2018Judet.Forms
                     tabControl2.TabPages.Add(tp2);
                     tp2.Controls.Add(item2);
                     break;
+
                 case 3:
                     ItemTip3 item3 = new ItemTip3
                     {
@@ -124,6 +123,7 @@ namespace Olipmpiada2018Judet.Forms
                     tabControl2.TabPages.Add(tp3);
                     tp3.Controls.Add(item3);
                     break;
+
                 case 4:
                     ItemTip4 item4 = new ItemTip4
                     {
@@ -137,7 +137,6 @@ namespace Olipmpiada2018Judet.Forms
                     tabControl2.TabPages.Add(tp4);
                     tp4.Controls.Add(item4);
                     break;
-
 
                 default:
                     break;
@@ -193,7 +192,6 @@ namespace Olipmpiada2018Judet.Forms
                 serie.Points.AddXY(nota.Data, nota.Nota);
             }
 
-
             chart1.Series.Clear();
             chart1.Series.Add(serie);
 
@@ -208,7 +206,6 @@ namespace Olipmpiada2018Judet.Forms
 
             chart1.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
             chart1.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
-
 
             Series notaMedie = new Series();
             notaMedie.ChartType = SeriesChartType.Line;
@@ -250,12 +247,12 @@ namespace Olipmpiada2018Judet.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-        //    PrintPreviewDialog printPreview = new PrintPreviewDialog();
-        //    printPreview.ClientSize = new Size(400, 400);
-        //    printPreview.DesktopLocation = new Point(30, 30);
-        //    printPreview.Name = "Print preview dialog";
-        //    printPreview.UseAntiAlias = true;
-        //    printPreview.Document = new PrintDocument();
+            //    PrintPreviewDialog printPreview = new PrintPreviewDialog();
+            //    printPreview.ClientSize = new Size(400, 400);
+            //    printPreview.DesktopLocation = new Point(30, 30);
+            //    printPreview.Name = "Print preview dialog";
+            //    printPreview.UseAntiAlias = true;
+            //    printPreview.Document = new PrintDocument();
 
             int height = dataGridView1.Height;
 

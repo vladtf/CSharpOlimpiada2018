@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Olimpiada2019Judet.Models
+﻿namespace Olimpiada2019Judet.Models
 {
     public class UtilizatorModel
     {

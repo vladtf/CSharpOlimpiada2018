@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
 
 namespace Olimpiada2016Judet.DataAcces
@@ -40,13 +38,10 @@ namespace Olimpiada2016Judet.DataAcces
                     }
                 }
             }
-
         }
-
 
         private static int IdComanda(DateTime data, int idClient)
         {
-
             using (SqlConnection con = new SqlConnection(SqlDataAcces.ConnectionString))
             {
                 con.Open();
@@ -64,8 +59,6 @@ namespace Olimpiada2016Judet.DataAcces
                     }
                 }
             }
-
         }
     }
-
 }

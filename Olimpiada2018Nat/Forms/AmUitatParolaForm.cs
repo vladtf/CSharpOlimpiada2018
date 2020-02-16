@@ -1,23 +1,21 @@
-﻿using System;
+﻿using OlimpiadaCsharp2018.Helpers;
+using OlimpiadaCsharp2018.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using OlimpiadaCsharp2018.Models;
-using OlimpiadaCsharp2018.Helpers;
 
 namespace OlimpiadaCsharp2018.Forms
 {
     public partial class AmUitatParolaForm : Form
     {
-        List<Bitmap> imagini;
-        List<int> listaOameni;
-        Random r = new Random();
+        private List<Bitmap> imagini;
+        private List<int> listaOameni;
+        private Random r = new Random();
 
         public UserModel User { get; set; }
+
         public AmUitatParolaForm(UserModel user)
         {
             InitializeComponent();
@@ -37,7 +35,6 @@ namespace OlimpiadaCsharp2018.Forms
                 MessageBox.Show("Parola a fost modificata!");
                 (Tag as MainForm).Visible = true;
                 this.Close();
-
             }
             else
             {
@@ -57,7 +54,6 @@ namespace OlimpiadaCsharp2018.Forms
             (Tag as MainForm).Visible = true;
         }
 
-
         private void InitiliazeazaImagini()
         {
             pictureBox1.BackColor = pictureBox2.BackColor = pictureBox3.BackColor = pictureBox4.BackColor = pictureBox5.BackColor = pictureBox6.BackColor = Color.Transparent;
@@ -65,6 +61,7 @@ namespace OlimpiadaCsharp2018.Forms
             listaOameni = GetImages.ImaginiOameni();
 
             #region trash
+
             int index = r.Next(0, 19);
             pictureBox1.Image = imagini[index];
             pictureBox1.Tag = imagini[index].Tag;
@@ -87,8 +84,9 @@ namespace OlimpiadaCsharp2018.Forms
 
             index = r.Next(0, 19);
             pictureBox6.Image = imagini[index];
-            pictureBox6.Tag = imagini[index].Tag; 
-            #endregion
+            pictureBox6.Tag = imagini[index].Tag;
+
+            #endregion trash
         }
 
         private void pictureBox_Select(object sender, EventArgs e)
@@ -109,6 +107,7 @@ namespace OlimpiadaCsharp2018.Forms
             bool ok = true;
 
             #region ABSOLUTE TRASH CODE
+
             if (pictureBox1.BackColor == Color.Blue)
             {
                 if (listaOameni.IndexOf((int)pictureBox1.Tag) == -1)
@@ -162,7 +161,8 @@ namespace OlimpiadaCsharp2018.Forms
                 }
             }
             else if (listaOameni.IndexOf((int)pictureBox6.Tag) != -1) ok = false;
-            #endregion
+
+            #endregion ABSOLUTE TRASH CODE
 
             if (ok)
             {
@@ -176,7 +176,5 @@ namespace OlimpiadaCsharp2018.Forms
             }
             InitiliazeazaImagini();
         }
-
-
     }
 }

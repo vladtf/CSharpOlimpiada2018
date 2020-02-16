@@ -1,14 +1,13 @@
-﻿using System;
+﻿using OlimpiadaCSharp.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using OlimpiadaCSharp.Models;
 
 namespace OlimpiadaCSharp.Helpers
 {
     public class TableMethods
     {
-
         //primeste tabela cu toate planificarile si le salveaza doar pe celea care sunt intre cele 2 date selectate
         public static DataTable Fill(DataTable table, DateTime datastart, DateTime datastop)
         {

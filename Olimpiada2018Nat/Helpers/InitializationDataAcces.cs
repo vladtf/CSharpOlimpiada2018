@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using OlimpiadaCsharp2018.Models;
+using System;
 using System.Data.SqlClient;
-using System.IO;
-using OlimpiadaCsharp2018.Models;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 
 namespace OlimpiadaCsharp2018.Helpers
 {
@@ -56,7 +54,6 @@ namespace OlimpiadaCsharp2018.Helpers
 
                     if (tokens.Length == 5)
                     {
-
                         lectie = new LectieModel
                         {
                             IdLectie = i,
@@ -99,7 +96,6 @@ namespace OlimpiadaCsharp2018.Helpers
                     i++;
                 }
             }
-
         }
 
         public static void ClearDB()

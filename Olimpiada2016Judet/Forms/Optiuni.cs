@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Olimpiada2016Judet.DataAcces;
+using Olimpiada2016Judet.Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Olimpiada2016Judet.Models;
-using Olimpiada2016Judet.DataAcces;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Olimpiada2016Judet.Forms
@@ -15,6 +13,7 @@ namespace Olimpiada2016Judet.Forms
     public partial class Optiuni : Form
     {
         private UserModel utilizator;
+
         public Optiuni(UserModel utilizator)
         {
             this.utilizator = utilizator;
@@ -53,7 +52,6 @@ namespace Olimpiada2016Judet.Forms
             }
             catch (Exception)
             {
-
             }
 
             if (s < 250)
@@ -68,7 +66,6 @@ namespace Olimpiada2016Judet.Forms
             {
                 textBox4.Text = "2500";
             }
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -112,13 +109,11 @@ namespace Olimpiada2016Judet.Forms
                     int pretCurr = textBox5.Text != "" ? int.Parse(textBox6.Text) : 0;
                     textBox5.Text = (pretCurr + cantitate * pret).ToString();
                     dgv["pret", row].Value = pret * cantitate;
-
                 }
                 else
                 {
                     MessageBox.Show("Cantitate 0");
                 }
-
             }
         }
 
@@ -129,7 +124,6 @@ namespace Olimpiada2016Judet.Forms
 
             IninitializareGrafic();
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -188,7 +182,6 @@ namespace Olimpiada2016Judet.Forms
                 mancaruri.Add(men);
             }
 
-
             DataTable newTable = new DataTable();
             newTable.Columns.Add("IdFelul1");
             newTable.Columns.Add("IdFelul2");
@@ -222,7 +215,6 @@ namespace Olimpiada2016Judet.Forms
                  Felul3 = fel3.DenumereaProdus,
                  TotalKCal = fel1.KCal + fel2.KCal + fel3.KCal,
                  PretTotal = fel1.Pret + fel2.Pret + fel3.Pret
-
              }).ToList().Select(x =>
                                   {
                                       DataRow temp = newTable.NewRow();
@@ -236,7 +228,6 @@ namespace Olimpiada2016Judet.Forms
                                       temp["Pret total"] = x.PretTotal;
 
                                       return temp;
-
                                   }).ToList().ForEach(x => newTable.Rows.Add(x));
 
             dataGridView2.DataSource = newTable;
@@ -249,7 +240,6 @@ namespace Olimpiada2016Judet.Forms
             btn.UseColumnTextForButtonValue = true;
 
             dataGridView2.Columns.Add(btn);
-
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -277,9 +267,7 @@ namespace Olimpiada2016Judet.Forms
                 this.Close();
                 Start.GetInsance().Show();
             }
-
         }
-
 
         private void IninitializareGrafic()
         {
@@ -289,9 +277,9 @@ namespace Olimpiada2016Judet.Forms
 
             Series serie = new Series("Kcal");
 
-            foreach (var item in comenzi.GroupBy(x=>x.DenumereaProdus))
+            foreach (var item in comenzi.GroupBy(x => x.DenumereaProdus))
             {
-                serie.Points.AddXY(item.First().DenumereaProdus, item.Sum(x=>x.KCal));
+                serie.Points.AddXY(item.First().DenumereaProdus, item.Sum(x => x.KCal));
             }
 
             chart1.Series.Add(serie);

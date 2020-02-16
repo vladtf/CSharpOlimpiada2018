@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Olipmpiada2018Judet.Forms;
+using System;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Olipmpiada2018Judet.Forms;
 
 namespace Olipmpiada2018Judet.ItemsControl
 {
@@ -63,6 +59,5 @@ namespace Olipmpiada2018Judet.ItemsControl
             (Tag as eLearning_Elev).Raspunde(RaspunsCorect, raspuns);
             button1.Enabled = false;
         }
-
     }
 }

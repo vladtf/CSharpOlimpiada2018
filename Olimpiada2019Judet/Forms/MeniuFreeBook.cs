@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Olimpiada2019Judet.DataAcces;
+using Olimpiada2019Judet.Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Olimpiada2019Judet.Models;
-using Olimpiada2019Judet.DataAcces;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Olimpiada2019Judet.Forms
@@ -16,7 +14,8 @@ namespace Olimpiada2019Judet.Forms
     {
         public UtilizatorModel utilizator { get; set; }
         private List<ImprumutModel> imprumuturi;
-        DataTable table;
+        private DataTable table;
+
         public MeniuFreeBook()
         {
             InitializeComponent();
@@ -37,10 +36,9 @@ namespace Olimpiada2019Judet.Forms
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
-            
         }
 
-        void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
 
@@ -96,9 +94,9 @@ namespace Olimpiada2019Judet.Forms
             serie.Name = "Luna";
             //serie.XValueType = typeof(string);
 
-            DateTime an = dateTimePicker1.Value.AddDays(1-dateTimePicker1.Value.DayOfYear);
+            DateTime an = dateTimePicker1.Value.AddDays(1 - dateTimePicker1.Value.DayOfYear);
 
-            var imprumuturiAn = SqlDataAcces.GetImprumuturiAn(an, an.AddYears(1)).Select(x=>x.DataImprumut).OrderBy(x=>x).Select(x=>x.ToString("MMM")).ToList();
+            var imprumuturiAn = SqlDataAcces.GetImprumuturiAn(an, an.AddYears(1)).Select(x => x.DataImprumut).OrderBy(x => x).Select(x => x.ToString("MMM")).ToList();
             var stats = imprumuturiAn.GroupBy(x => x).ToList();
 
             DateTime temp = DateTime.Now.AddDays(1 - DateTime.Now.DayOfYear);
@@ -111,13 +109,13 @@ namespace Olimpiada2019Judet.Forms
 
             foreach (var item in stats)
             {
-                serie.Points.AddXY(item.First(),item.Count());
+                serie.Points.AddXY(item.First(), item.Count());
             }
 
             chart1.Series.Add(serie);
 
             chart1.ChartAreas[0].AxisX.Interval = 1;
-            
+
             chart1.Series[0].IsValueShownAsLabel = true;
 
             //chart1.ChartAreas[0].AxisX.LabelStyle.Format = "MMM";
@@ -163,12 +161,10 @@ namespace Olimpiada2019Judet.Forms
                 {
                     expirate.Add(index);
                 }
-
             }
 
             dataGridView2.DataSource = table;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
 
             for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
             {
@@ -193,7 +189,7 @@ namespace Olimpiada2019Judet.Forms
 
         private void InitializareCartiChart()
         {
-            List<string> carti = SqlDataAcces.GetCartiCitite().OrderBy(x=>x).ToList();
+            List<string> carti = SqlDataAcces.GetCartiCitite().OrderBy(x => x).ToList();
             var celeMaiCitieCarti = carti.GroupBy(x => x).OrderByDescending(x => x.Count()).Take(4).ToList();
 
             chart2.Series.Clear();

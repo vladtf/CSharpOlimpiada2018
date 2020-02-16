@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using Olipmpiada2018Judet.Forms;
 using Olipmpiada2018Judet.Helpers;
 using Olipmpiada2018Judet.Models;
-using Olipmpiada2018Judet.Forms;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Olipmpiada2018Judet.DataAcces
 {
@@ -27,7 +24,7 @@ namespace Olipmpiada2018Judet.DataAcces
 
             timer.Interval = 2000;
             timer.Tick += new EventHandler(timer_Tick);
-            progressBar1.Maximum = imagini.Count()-1;
+            progressBar1.Maximum = imagini.Count() - 1;
             progressBar1.Value = 0;
             pictureBox1.Image = imagini.First();
 
@@ -53,7 +50,7 @@ namespace Olipmpiada2018Judet.DataAcces
             }
         }
 
-        void timer_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
             if (progressBar1.Value < progressBar1.Maximum)
             {

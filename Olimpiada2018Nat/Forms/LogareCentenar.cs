@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using OlimpiadaCsharp2018.Helpers;
 using OlimpiadaCsharp2018.Models;
-using OlimpiadaCsharp2018.Helpers;
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace OlimpiadaCsharp2018.Forms
 {
@@ -23,7 +18,6 @@ namespace OlimpiadaCsharp2018.Forms
 
             textBox1.Text = "popescu@gmail.com";
             textBox2.Text = "popIon";
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,7 +66,6 @@ namespace OlimpiadaCsharp2018.Forms
                     var page = new AmUitatParolaForm(user);
                     page.Tag = Tag;
                     page.Show();
-
                 }
                 else
                 {
@@ -84,7 +77,5 @@ namespace OlimpiadaCsharp2018.Forms
                 MessageBox.Show("Introduceti un email valid!");
             }
         }
-
-
     }
 }

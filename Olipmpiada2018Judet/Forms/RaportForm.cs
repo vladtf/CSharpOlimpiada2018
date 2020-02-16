@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Olipmpiada2018Judet.Forms
@@ -20,8 +14,6 @@ namespace Olipmpiada2018Judet.Forms
         {
             tableLayoutPanel1.Controls.Add(new Label { Text = raspuns, Font = new Font(label1.Font.FontFamily, 12) });
             tableLayoutPanel1.Controls.Add(new Label { Text = raspunsCorect, Font = new Font(label1.Font.FontFamily, 12) });
- 
         }
-
     }
 }

@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Olimpiada2016Judet.DataAcces;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Olimpiada2016Judet.DataAcces;
 
 namespace Olimpiada2016Judet.Forms
 {
     public partial class Vizualizare_Comanda : Form
     {
-        int idClient;
+        private int idClient;
+
         public Vizualizare_Comanda(DataTable table, string necesar, string kcal, string pret, int idClient)
         {
             this.idClient = idClient;
@@ -58,10 +55,7 @@ namespace Olimpiada2016Judet.Forms
                 textBox5.Text = (pretCurr - pret).ToString();
 
                 dgv.Rows.RemoveAt(row);
-
-
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,7 +67,6 @@ namespace Olimpiada2016Judet.Forms
             {
                 try
                 {
-
                     cantitati.Add(int.Parse((string)item.Cells["Cantitate"].Value));
                     idProduse.Add(int.Parse((string)item.Cells["idProdus"].Value));
                 }
@@ -87,7 +80,6 @@ namespace Olimpiada2016Judet.Forms
             Start.GetInsance().Show();
 
             this.Close();
-
         }
     }
 }
