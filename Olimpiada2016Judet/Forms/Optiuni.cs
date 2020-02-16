@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Olimpiada2016Judet.Models;
 using Olimpiada2016Judet.DataAcces;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Olimpiada2016Judet.Forms
 {
@@ -125,7 +126,10 @@ namespace Olimpiada2016Judet.Forms
         {
             textBox7.Text = textBox4.Text;
             textBox10.Text = textBox4.Text;
+
+            IninitializareGrafic();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -277,6 +281,23 @@ namespace Olimpiada2016Judet.Forms
         }
 
 
+        private void IninitializareGrafic()
+        {
+            chart1.Series.Clear();
 
+            List<MeniuModel> comenzi = GetAllCommands.Get(utilizator.Id);
+
+            Series serie = new Series("Kcal");
+
+            foreach (var item in comenzi.GroupBy(x=>x.DenumereaProdus))
+            {
+                serie.Points.AddXY(item.First().DenumereaProdus, item.Sum(x=>x.KCal));
+            }
+
+            chart1.Series.Add(serie);
+
+            chart1.ChartAreas[0].AxisX.Interval = 1;
+            chart1.Series[0].IsValueShownAsLabel = true;
+        }
     }
 }
