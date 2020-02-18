@@ -1,0 +1,9 @@
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.Properties.Resources.resources
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.csproj.GenerateResource.Cache
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\bin\Debug\Olimpiada2015Judet.exe
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\bin\Debug\Olimpiada2015Judet.pdb
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.exe
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.pdb
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.csproj.ResolveComReference.cache
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.Forms.Autentificare.resources
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.Forms.MainForm.resources
