@@ -43,7 +43,7 @@
             this.iesireToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(606, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1048, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -52,6 +52,7 @@
             this.administrareToolStripMenuItem.Name = "administrareToolStripMenuItem";
             this.administrareToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.administrareToolStripMenuItem.Text = "Administrare";
+            this.administrareToolStripMenuItem.Click += new System.EventHandler(this.administrareToolStripMenuItem_Click);
             // 
             // initializareToolStripMenuItem
             // 
@@ -70,7 +71,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 495);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1048, 542);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

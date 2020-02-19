@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAcces\ActualizareDistatante.cs" />
+    <Compile Include="DataAcces\SqlDataAcces.cs" />
     <Compile Include="Forms\Administrare.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,21 +63,20 @@
     <Compile Include="Forms\Autentificare.Designer.cs">
       <DependentUpon>Autentificare.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataAcces\InitializarePorturi.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Singleton.cs" />
-    <Compile Include="Forms\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Helpers\ReadFromExcel.cs" />
+    <Compile Include="Helpers\Singleton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Administrare.resx">
+      <DependentUpon>Administrare.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Autentificare.resx">
       <DependentUpon>Autentificare.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,7 +104,6 @@
     <None Include="Resurse\Matrice.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataAcces\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

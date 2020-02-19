@@ -15,6 +15,8 @@ namespace Olimpiada2015Judet.Forms
         public MainForm()
         {
             InitializeComponent();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void iesireToolStripMenuItem_Click(object sender, EventArgs e)
@@ -25,6 +27,15 @@ namespace Olimpiada2015Judet.Forms
         protected override void OnClosed(EventArgs e)
         {
             Singleton<Autentificare>.Instance.Close();
+        }
+
+        private void administrareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Utilizator == "Administrator")
+            {
+                Administrare page = new Administrare { MdiParent = this };
+                page.Show();
+            }
         }
     }
 }

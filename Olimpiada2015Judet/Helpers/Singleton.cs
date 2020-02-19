@@ -18,5 +18,6 @@ namespace Olimpiada2015Judet.Forms
         }
 
         private Singleton() { }
+
     }
 }
