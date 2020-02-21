@@ -48,15 +48,26 @@ namespace Olimpiada2015Judet.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            InitializarePorturi.Salvare(SqlDataAcces.Connectionstring, porturi);
+            InitializarePorturi.Salvare(SqlDataAcces.ConnectionString, porturi);
 
             MessageBox.Show("Salvare cu succes!");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ActualizareDistatante.Actualizeaza(SqlDataAcces.Connectionstring);
+            ActualizareDistatante.Actualizeaza(SqlDataAcces.ConnectionString);
             MessageBox.Show("Date actualizate!");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            GenerareCroaziere.Generare(SqlDataAcces.ConnectionString);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var page = new ListaCroaziereForm();
+            page.ShowDialog();
         }
 
 

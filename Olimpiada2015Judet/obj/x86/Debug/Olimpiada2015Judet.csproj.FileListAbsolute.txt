@@ -8,3 +8,4 @@ C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada20
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.Forms.Autentificare.resources
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.Forms.MainForm.resources
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.Forms.Administrare.resources
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2015Judet\obj\x86\Debug\Olimpiada2015Judet.Forms.ListaCroaziereForm.resources

@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAcces\ActualizareDistatante.cs" />
+    <Compile Include="DataAcces\GenerareCroaziere.cs" />
+    <Compile Include="DataAcces\ListaCroaziera.cs" />
     <Compile Include="DataAcces\SqlDataAcces.cs" />
     <Compile Include="Forms\Administrare.cs">
       <SubType>Form</SubType>
@@ -64,6 +66,12 @@
       <DependentUpon>Autentificare.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAcces\InitializarePorturi.cs" />
+    <Compile Include="Forms\ListaCroaziereForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListaCroaziereForm.Designer.cs">
+      <DependentUpon>ListaCroaziereForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +80,7 @@
     </Compile>
     <Compile Include="Helpers\ReadFromExcel.cs" />
     <Compile Include="Helpers\Singleton.cs" />
+    <Compile Include="Models\DistantaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Administrare.resx">
@@ -79,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Autentificare.resx">
       <DependentUpon>Autentificare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListaCroaziereForm.resx">
+      <DependentUpon>ListaCroaziereForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -103,9 +115,7 @@
     </Compile>
     <None Include="Resurse\Matrice.xlsx" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resurse\Croaziera_1.png" />
     <Content Include="Resurse\Croaziera_2.png" />
