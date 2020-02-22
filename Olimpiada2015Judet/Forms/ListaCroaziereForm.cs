@@ -16,12 +16,9 @@ namespace Olimpiada2015Judet.Forms
         public ListaCroaziereForm()
         {
             InitializeComponent();
+            InitiateDataGridView();
 
             comboBox1.Items.AddRange(new string[] {"3 zile", "5 zile", "8 zile"});
-            _table = ListaCroaziera.GetCroaziere(SqlDataAcces.ConnectionString);
-
-            dataGridView1.DataSource = _table;
-
             comboBox1.SelectedIndex = 0;
         }
 
@@ -38,6 +35,21 @@ namespace Olimpiada2015Judet.Forms
             _table.DefaultView.RowFilter = String.Format("{0} = {1}", filterField, tipCroaziera);
 
             //dataGridView1.DataSource = _table;
+        }
+
+        private void InitiateDataGridView()
+        {
+            _table = ListaCroaziera.GetCroaziere(SqlDataAcces.ConnectionString);
+
+            dataGridView1.DataSource = _table;
+
+            dataGridView1.Columns["ID_Croaziera"].HeaderText = "ID";
+            dataGridView1.Columns["Tip_Croaziera"].Visible = false;
+            dataGridView1.Columns["distanta"].Visible = false;
+            dataGridView1.Columns["Circuit"].DisplayIndex = 1;
+
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

@@ -24,12 +24,22 @@ namespace Olimpiada2015Judet.DataAcces
 
                         adapter.Fill(table);
 
+                        table.Columns.Add("Circuit");
+                        foreach (DataRow row in table.Rows)
+                        {
+                            List<int> porturi = row["Lista_porturi"].ToString().Split(',').Select(x => Int32.Parse(x)).ToList();
+
+                            string circuit = SqlDataAcces.GetCircuitByArray(porturi);
+
+                            row["Circuit"] = circuit;
+                        }
+
                         return table;
                     }
                 }
             }
 
-            throw new NullReferenceException();
+
         }
     }
 }

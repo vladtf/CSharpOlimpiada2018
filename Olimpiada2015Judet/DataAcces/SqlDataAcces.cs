@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using Olimpiada2015Judet.Models;
+using System.Drawing;
 
 namespace Olimpiada2015Judet.DataAcces
 {
@@ -80,13 +81,95 @@ namespace Olimpiada2015Judet.DataAcces
                     cmd.Parameters.AddWithValue("id", idCroaziera);
                     cmd.Parameters.AddWithValue("tip", tipCroaziera);
                     cmd.Parameters.AddWithValue("lista", listaStringPorturi);
-                    cmd.Parameters.AddWithValue("@pret", pret);
-                    cmd.Parameters.AddWithValue("@distanta", distanta);
+                    cmd.Parameters.AddWithValue("pret", pret);
+                    cmd.Parameters.AddWithValue("distanta", distanta);
                     cmd.ExecuteNonQuery();
                 }
 
             }
         }
+
+        public static string GetCircuitByArray(List<int> porturi)
+        {
+            string cicruit = "";
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Select Nume_port from Porturi where ID_Port = @id";
+                foreach (int item in porturi)
+                {
+                    using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                    {
+                        cmd.Parameters.AddWithValue("id", item);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            reader.Read();
+
+                            string answer = reader[0].ToString();
+
+                            cicruit += answer + ",";
+                        }
+                    }
+                }
+            }
+            return cicruit;
+        }
+
+        public static void UpdateCroaziera(int idCroaziera, int nrPasageri, DateTime dataStart, DateTime dataFinal)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Update Croaziere set Nr_Pasageri = @nrPasager, Data_Start = @dataStart, Data_Final = @dataFinal where ID_Croaziera = @idCroaziera;";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    cmd.Parameters.AddWithValue("idCroaziera", idCroaziera);
+                    cmd.Parameters.AddWithValue("nrPasager", nrPasageri);
+                    cmd.Parameters.AddWithValue("dataStart", dataStart);
+                    cmd.Parameters.AddWithValue("dataFinal", dataFinal);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+        }
+
+        internal static List<System.Drawing.Point> GetListaPorturi(List<int> listaPorturi)
+        {
+            List<Point> listaPorturiPuncte = new List<Point>();
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Select Pozitie_X, Pozitie_Y from Porturi where ID_Port = @id;";
+
+                foreach (int id in listaPorturi)
+                {
+                    using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                    {
+                        cmd.Parameters.AddWithValue("id", id);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            reader.Read();
+
+                            int x = (int)reader["Pozitie_X"];
+                            int y = (int)reader["Pozitie_Y"];
+
+                            listaPorturiPuncte.Add(new Point(x, y));
+                        }
+                    }
+                }
+            }
+
+            return listaPorturiPuncte;
+        }
+
 
     }
 }

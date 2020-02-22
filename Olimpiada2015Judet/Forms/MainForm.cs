@@ -37,5 +37,11 @@ namespace Olimpiada2015Judet.Forms
                 page.Show();
             }
         }
+
+        private void initializareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TuristForm page = new TuristForm { MdiParent = this };
+            page.Show();
+        }
     }
 }

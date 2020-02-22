@@ -59,6 +59,7 @@
             this.initializareToolStripMenuItem.Name = "initializareToolStripMenuItem";
             this.initializareToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.initializareToolStripMenuItem.Text = "Turisti";
+            this.initializareToolStripMenuItem.Click += new System.EventHandler(this.initializareToolStripMenuItem_Click);
             // 
             // iesireToolStripMenuItem
             // 

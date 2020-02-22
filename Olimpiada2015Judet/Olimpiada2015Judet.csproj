@@ -78,6 +78,18 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TuristForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TuristForm.Designer.cs">
+      <DependentUpon>TuristForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VizualizareCroaziera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VizualizareCroaziera.Designer.cs">
+      <DependentUpon>VizualizareCroaziera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\ReadFromExcel.cs" />
     <Compile Include="Helpers\Singleton.cs" />
     <Compile Include="Models\DistantaModel.cs" />
@@ -94,6 +106,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TuristForm.resx">
+      <DependentUpon>TuristForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VizualizareCroaziera.resx">
+      <DependentUpon>VizualizareCroaziera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
