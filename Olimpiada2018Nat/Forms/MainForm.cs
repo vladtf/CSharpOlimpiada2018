@@ -44,5 +44,11 @@ namespace OlimpiadaCsharp2018
             page.Show();
             this.Hide();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var page = new GhicesteRegiunea();
+            page.ShowDialog();
+        }
     }
 }

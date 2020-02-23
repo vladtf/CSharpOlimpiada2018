@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2016Judet", "Olimp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2015Judet", "Olimpiada2015Judet\Olimpiada2015Judet.csproj", "{EE448998-5359-4D72-9B4C-23E5778FF438}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpiada2014Judet", "Olimpiada2014Judet\Olimpiada2014Judet.csproj", "{2796DF0C-EDBB-4C20-AAB4-4C24DBFA51C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -43,6 +45,10 @@ Global
 		{EE448998-5359-4D72-9B4C-23E5778FF438}.Debug|x86.Build.0 = Debug|x86
 		{EE448998-5359-4D72-9B4C-23E5778FF438}.Release|x86.ActiveCfg = Release|x86
 		{EE448998-5359-4D72-9B4C-23E5778FF438}.Release|x86.Build.0 = Release|x86
+		{2796DF0C-EDBB-4C20-AAB4-4C24DBFA51C4}.Debug|x86.ActiveCfg = Debug|x86
+		{2796DF0C-EDBB-4C20-AAB4-4C24DBFA51C4}.Debug|x86.Build.0 = Debug|x86
+		{2796DF0C-EDBB-4C20-AAB4-4C24DBFA51C4}.Release|x86.ActiveCfg = Release|x86
+		{2796DF0C-EDBB-4C20-AAB4-4C24DBFA51C4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

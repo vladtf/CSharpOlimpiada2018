@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataProviders\RomaniaMap.cs" />
     <Compile Include="Forms\AmUitatParolaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +59,12 @@
     </Compile>
     <Compile Include="Forms\CreareLectie.Designer.cs">
       <DependentUpon>CreareLectie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GhicesteRegiunea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GhicesteRegiunea.Designer.cs">
+      <DependentUpon>GhicesteRegiunea.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LogareCentenar.cs">
       <SubType>Form</SubType>
@@ -89,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreareLectie.resx">
       <DependentUpon>CreareLectie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GhicesteRegiunea.resx">
+      <DependentUpon>GhicesteRegiunea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogareCentenar.resx">
       <DependentUpon>LogareCentenar.cs</DependentUpon>
