@@ -16,6 +16,8 @@ namespace OlimpiadaCsharp2018.Forms
         private Bitmap romaniaMap;
         private RegionModel romaniaMare;
         private List<string> regionsName;
+        private List<RegionModel> regions;
+        private TextBox currentQuestion;
 
         public GhicesteRegiunea()
         {
@@ -23,12 +25,14 @@ namespace OlimpiadaCsharp2018.Forms
 
             regionsName = new string[] {"RomaniaMare", "Banat", "Basarabia", "Bucovina", "Crisana", "Dobrogea", "Maramures", "Moldova", "Muntenia", "Oltenia", "Transilvania" }.ToList();
 
+            regions = new List<RegionModel>();
+
+            button2.Enabled = button3.Enabled = false;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             romaniaMare = RomaniaMap.GetRegion(regionsName[0], RomaniaMap.RegionType.RomaniaMare);
-
             int width = romaniaMare.Points.Select(x => x.X).Max();
             int height = romaniaMare.Points.Select(x => x.Y).Max();
 
@@ -65,6 +69,7 @@ namespace OlimpiadaCsharp2018.Forms
                 for (int i = 1; i < regionsName.Count(); i++)
                 {
                     RegionModel region = RomaniaMap.GetRegion(regionsName[i], RomaniaMap.RegionType.Judet);
+                    regions.Add(region);
 
                     DrawRegion(gr, region, Color.White);
                 }
@@ -72,6 +77,7 @@ namespace OlimpiadaCsharp2018.Forms
 
             pictureBox1.Size = new Size(width, height);
             pictureBox1.Image = romaniaMap;
+            pictureBox1.SendToBack();
 
         }
 
@@ -84,6 +90,71 @@ namespace OlimpiadaCsharp2018.Forms
                 gr.DrawLine(pen, curr, region.Points[i]);
                 curr = region.Points[i];
             }
+        }
+
+        private void QuestionRegion(RegionModel region)
+        {
+            
+            TextBox response = new TextBox();
+            //response.Location = new Point(0, 0);
+            response.Location = new Point(pictureBox1.Location.X + region.CapitalPosition.X, pictureBox1.Location.Y + region.CapitalPosition.Y);
+
+            response.Font = new Font("Arial", 10);
+            response.Size = new Size(80,10);
+            response.BackColor = Color.White;
+            response.Tag = region.Name;
+
+            this.Controls.Add(response);
+
+            response.BringToFront();
+
+            currentQuestion = response;
+
+            regions.Remove(region);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
+            button1.Enabled = false;
+
+            QuestionRegion(regions[new Random().Next(0,regions.Count - 1)]);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (currentQuestion.Text == (string)currentQuestion.Tag)
+            {
+                textBox1.Text = (Int32.Parse(textBox1.Text) + 1).ToString();
+                currentQuestion.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                currentQuestion.BackColor = Color.Red;
+                currentQuestion.Text = (string)currentQuestion.Tag;
+
+                using (Font font = new Font(currentQuestion.Font, FontStyle.Strikeout))
+                {
+                    currentQuestion.Font = font;
+                }
+            }
+            currentQuestion.ForeColor = Color.White;
+            currentQuestion.Enabled = false;
+
+            if (regions.Count < 1)
+            {
+                button3.Enabled = true;
+                button2.Enabled = false;
+                return;
+            }
+
+            QuestionRegion(regions[new Random().Next(0, regions.Count - 1)]);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var page = new Diploma(Int32.Parse(textBox1.Text));
+            page.Show();
         }
     }
 }

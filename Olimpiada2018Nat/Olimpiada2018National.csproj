@@ -60,6 +60,12 @@
     <Compile Include="Forms\CreareLectie.Designer.cs">
       <DependentUpon>CreareLectie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Diploma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Diploma.Designer.cs">
+      <DependentUpon>Diploma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GhicesteRegiunea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreareLectie.resx">
       <DependentUpon>CreareLectie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Diploma.resx">
+      <DependentUpon>Diploma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GhicesteRegiunea.resx">
       <DependentUpon>GhicesteRegiunea.cs</DependentUpon>

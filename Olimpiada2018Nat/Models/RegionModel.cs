@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using static OlimpiadaCsharp2018.DataProviders.RomaniaMap;
+using OlimpiadaCsharp2018.DataProviders;
 
 namespace OlimpiadaCsharp2018.Models
 {
@@ -13,6 +13,6 @@ namespace OlimpiadaCsharp2018.Models
         public string Capital { get; set; }
         public Point CapitalPosition { get; set; }
         public List<Point> Points { get; set; }
-        public RegionType RegionType { get; set; }
+        public RomaniaMap.RegionType RegionType { get; set; }
     }
 }
