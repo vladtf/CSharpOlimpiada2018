@@ -15,9 +15,9 @@ namespace OlimpiadaCsharp2018.Models
         public List<Point> Points { get; set; }
         public RomaniaMap.RegionType RegionType { get; set; }
 
-        private static List<string> allRegionsName = new string[] {"RomaniaMare", "Banat", "Basarabia", "Bucovina", "Crisana", "Dobrogea", "Maramures", "Moldova", "Muntenia", "Oltenia", "Transilvania" }.ToList();
+        private static List<string> allRegionsName = new string[] {"RomaniaMare", "Transilvania", "Crisana", "Maramures", "Bucovina", "Moldova","Basarabia", "Dobrogea", "Muntenia", "Oltenia","Banat"}.ToList();
 
-        internal static List<RegionModel> GetJudete()
+        public static List<RegionModel> GetJudete()
         {
             List<RegionModel> regions = new List<RegionModel>();
 
@@ -28,6 +28,11 @@ namespace OlimpiadaCsharp2018.Models
             }
 
             return regions;
+        }
+
+        public static List<string> GetNumeJudete()
+        {
+            return allRegionsName.Where((value, index)=> index>=1).ToList();
         }
     }
 }

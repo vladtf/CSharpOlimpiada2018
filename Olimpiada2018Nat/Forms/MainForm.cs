@@ -12,7 +12,7 @@ namespace OlimpiadaCsharp2018
             InitializeComponent();
             InitializationDataAcces.InitializeDB();
 
-            button3.Enabled = button4.Enabled = button5.Enabled = true;
+            //button3.Enabled = button4.Enabled = button5.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

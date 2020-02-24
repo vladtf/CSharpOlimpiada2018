@@ -68,9 +68,38 @@ namespace OlimpiadaCsharp2018.Helpers
             }
         }
 
-        private static void DrawCities(Bitmap romania, List<RegionModel> judete)
+        public static Bitmap DrawCities(Bitmap romania, List<RegionModel> judete)
         {
- 
+            using (Graphics gr = Graphics.FromImage(romania))
+            {
+
+                Pen linePen = new Pen(Color.Green, 3);
+                Pen cityPen = new Pen(Color.Blue, 2);
+                SolidBrush cityBrush = new SolidBrush(Color.Blue);
+
+                for (int i = 0; i < judete.Count; i++)
+                {
+                    RegionModel current = judete[i];
+                    Point cityPosition = new Point(current.CapitalPosition.X, current.CapitalPosition.Y);
+                    gr.DrawEllipse(cityPen, cityPosition.X, cityPosition.Y, 5, 5);
+                    gr.DrawString(current.Capital, new Font("Arial", 8), cityBrush, cityPosition.X + 5, cityPosition.Y);
+
+                }
+            }
+
+            return romania;
+        }
+
+        public static Bitmap DrawRoute(Bitmap romania, RegionModel regionStart, RegionModel regionEnd)
+        {
+            using (Graphics gr = Graphics.FromImage(romania))
+            {
+                Pen pen = new Pen(Color.Green, 3);
+
+                gr.DrawLine(pen, regionEnd.CapitalPosition, regionStart.CapitalPosition);
+            }
+
+            return romania;
         }
     }
 }
