@@ -8,7 +8,7 @@ using OlimpiadaCsharp2018.Models;
 
 namespace OlimpiadaCsharp2018.DataProviders
 {
-    class RomaniaMap
+    public class RomaniaMap
     {
         public enum RegionType
         {
@@ -33,7 +33,7 @@ namespace OlimpiadaCsharp2018.DataProviders
                     Point capitala = new Point(Int32.Parse(line[0]), Int32.Parse(line[1]));
 
                     regiune.CapitalPosition = capitala;
-                    regiune.Capital = line[2];
+                    regiune.Capital = line.Count() == 3 ? line[2] : "";
                 }
                 while (reader.Peek() >= 0)
                 {

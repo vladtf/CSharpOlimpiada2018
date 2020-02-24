@@ -50,5 +50,11 @@ namespace OlimpiadaCsharp2018
             var page = new GhicesteRegiunea();
             page.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var page = new GenereazaTraseu();
+            page.Show();
+        }
     }
 }
