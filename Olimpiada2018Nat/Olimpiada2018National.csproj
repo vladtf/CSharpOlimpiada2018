@@ -89,6 +89,7 @@
     <Compile Include="Helpers\InitializationDataAcces.cs" />
     <Compile Include="Helpers\LoghingDB.cs" />
     <Compile Include="Models\LectieModel.cs" />
+    <Compile Include="Models\RegionModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
