@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{740AFD1B-7B73-4066-BBB3-DD02FE2A2014}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Olimpiada2019National</RootNamespace>
+    <AssemblyName>Olimpiada2019National</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAcces\SqlDataAcces.cs" />
+    <Compile Include="Forms\StartBiblioteca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartBiblioteca.Designer.cs">
+      <DependentUpon>StartBiblioteca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Singleton.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataProvider\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resurse\carti.txt" />
+    <Content Include="Resurse\descriere.txt" />
+    <Content Include="Resurse\Imagini\altele\biblioteca1.jpg" />
+    <Content Include="Resurse\Imagini\altele\biblioteca2.gif" />
+    <Content Include="Resurse\Imagini\altele\img1.jpg" />
+    <Content Include="Resurse\Imagini\altele\img10.jpg" />
+    <Content Include="Resurse\Imagini\altele\img11.jpg" />
+    <Content Include="Resurse\Imagini\altele\img12.jpg" />
+    <Content Include="Resurse\Imagini\altele\img13.jpg" />
+    <Content Include="Resurse\Imagini\altele\img14.jpg" />
+    <Content Include="Resurse\Imagini\altele\img2.jpg" />
+    <Content Include="Resurse\Imagini\altele\img3.jpg" />
+    <Content Include="Resurse\Imagini\altele\img4.jpg" />
+    <Content Include="Resurse\Imagini\altele\img5.jpg" />
+    <Content Include="Resurse\Imagini\altele\img6.jpg" />
+    <Content Include="Resurse\Imagini\altele\img7.jpg" />
+    <Content Include="Resurse\Imagini\altele\img8.png" />
+    <Content Include="Resurse\Imagini\altele\img9.jpg" />
+    <Content Include="Resurse\Imagini\carti\1.jpg" />
+    <Content Include="Resurse\Imagini\carti\10.jpg" />
+    <Content Include="Resurse\Imagini\carti\11.jpg" />
+    <Content Include="Resurse\Imagini\carti\12.jpg" />
+    <Content Include="Resurse\Imagini\carti\13.jpg" />
+    <Content Include="Resurse\Imagini\carti\14.jpg" />
+    <Content Include="Resurse\Imagini\carti\15.jpg" />
+    <Content Include="Resurse\Imagini\carti\16.jpg" />
+    <Content Include="Resurse\Imagini\carti\17.jpg" />
+    <Content Include="Resurse\Imagini\carti\18.jpg" />
+    <Content Include="Resurse\Imagini\carti\19.jpg" />
+    <Content Include="Resurse\Imagini\carti\2.jpg" />
+    <Content Include="Resurse\Imagini\carti\20.jpg" />
+    <Content Include="Resurse\Imagini\carti\21.jpg" />
+    <Content Include="Resurse\Imagini\carti\22.jpg" />
+    <Content Include="Resurse\Imagini\carti\23.jpg" />
+    <Content Include="Resurse\Imagini\carti\24.jpg" />
+    <Content Include="Resurse\Imagini\carti\3.jpg" />
+    <Content Include="Resurse\Imagini\carti\4.jpg" />
+    <Content Include="Resurse\Imagini\carti\5.jpg" />
+    <Content Include="Resurse\Imagini\carti\6.jpg" />
+    <Content Include="Resurse\Imagini\carti\7.jpg" />
+    <Content Include="Resurse\Imagini\carti\8.jpg" />
+    <Content Include="Resurse\Imagini\carti\9.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\1.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\10.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\11.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\12.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\13.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\14.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\15.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\16.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\17.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\18.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\2.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\3.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\4.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\5.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\6.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\7.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\8.jpg" />
+    <Content Include="Resurse\Imagini\utilizatori\9.jpg" />
+    <Content Include="Resurse\imprumuturi.txt" />
+    <Content Include="Resurse\rezervari.txt" />
+    <Content Include="Resurse\utilizatori.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

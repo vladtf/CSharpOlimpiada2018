@@ -1,0 +1,7 @@
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019National\obj\x86\Debug\Olimpiada2019National.Properties.Resources.resources
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019National\obj\x86\Debug\Olimpiada2019National.csproj.GenerateResource.Cache
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019National\bin\Debug\Olimpiada2019National.exe
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019National\bin\Debug\Olimpiada2019National.pdb
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019National\obj\x86\Debug\Olimpiada2019National.exe
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019National\obj\x86\Debug\Olimpiada2019National.pdb
+C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019National\obj\x86\Debug\Olimpiada2019National.csprojResolveAssemblyReference.cache
