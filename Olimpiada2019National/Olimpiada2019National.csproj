@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAcces\SqlDataAcces.cs" />
+    <Compile Include="Forms\LogareBiblioteca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogareBiblioteca.Designer.cs">
+      <DependentUpon>LogareBiblioteca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StartBiblioteca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +62,12 @@
     <Compile Include="Helpers\Singleton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\LogareBiblioteca.resx">
+      <DependentUpon>LogareBiblioteca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartBiblioteca.resx">
+      <DependentUpon>StartBiblioteca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,6 +76,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -80,6 +93,22 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Resurse\Imagini\altele\biblioteca1.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\biblioteca2.gif" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img1.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img2.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img3.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img4.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img5.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img6.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img7.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img8.png" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img9.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img10.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img11.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img12.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img13.jpg" />
+    <None Include="bin\Debug\Resurse\Imagini\altele\img14.jpg" />
     <Content Include="Resurse\carti.txt" />
     <Content Include="Resurse\descriere.txt" />
     <Content Include="Resurse\Imagini\altele\biblioteca1.jpg" />

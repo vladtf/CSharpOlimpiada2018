@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Olimpiada2019National
 {
@@ -21,5 +22,7 @@ namespace Olimpiada2019National
                 return instance.Value;
             }
         }
+
+
     }
 }

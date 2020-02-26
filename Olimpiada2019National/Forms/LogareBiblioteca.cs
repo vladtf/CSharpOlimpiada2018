@@ -9,18 +9,11 @@ using System.Windows.Forms;
 
 namespace Olimpiada2019National.Forms
 {
-    public partial class StartBiblioteca : Form
+    public partial class LogareBiblioteca : Form
     {
-        public StartBiblioteca()
+        public LogareBiblioteca()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Singleton<LogareBiblioteca>.Instance.Show();
-
-            this.Hide();
         }
     }
 }

@@ -85,24 +85,5 @@ namespace Olimpiada2019National.DataAcces
             }
 
         }
-
-        private static bool IsDate(string value)
-        {
-            int x;
-            if (Int32.TryParse(value, out x))
-            {
-                return true;
-            }
-
-            try
-            {
-                DateTime date = DateTime.ParseExact(value, "MM/dd/yyyy hh/mm/ss tt", CultureInfo.InvariantCulture);
-            }
-            catch
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }
