@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.IO;
 using System.Globalization;
+using Olimpiada2019National.Models;
 
 namespace Olimpiada2019National.DataAcces
 {
@@ -69,7 +70,7 @@ namespace Olimpiada2019National.DataAcces
                             }
                             else
                             {
-                                tokens.Add(String.Format("' {0} '", value));
+                                tokens.Add(String.Format("'{0}'", value));
                             }
 
                         }
@@ -84,6 +85,42 @@ namespace Olimpiada2019National.DataAcces
                 }
             }
 
+        }
+
+        public static UserModel Autentificare(string email, string parola)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Select * from Utilizatori where Email = @email and Parola = @parola";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    cmd.Parameters.AddWithValue("email", email);
+                    cmd.Parameters.AddWithValue("parola", parola);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        reader.Read();
+
+                        UserModel utilizator = new UserModel();
+                        if (reader.HasRows)
+                        {
+                            utilizator = new UserModel
+                            {
+                                ID = (int)reader["IdUtilizator"],
+                                TipUtilizator = (int)reader["TipUtilizator"],
+                                NumePenume = (string)reader["NumePrenume"],
+                                Email = (string)reader["Email"],
+                                Parola = (string)reader["Parola"]
+                            };
+ 
+                        }
+                        return utilizator;
+                    }
+                }
+            }
         }
     }
 }

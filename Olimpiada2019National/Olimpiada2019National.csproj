@@ -59,7 +59,9 @@
     <Compile Include="Forms\StartBiblioteca.Designer.cs">
       <DependentUpon>StartBiblioteca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CriptareParola.cs" />
     <Compile Include="Helpers\Singleton.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\LogareBiblioteca.resx">
@@ -90,7 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataProvider\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Resurse\Imagini\altele\biblioteca1.jpg" />
