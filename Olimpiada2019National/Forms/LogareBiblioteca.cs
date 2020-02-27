@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Olimpiada2019National.Models;
 using Olimpiada2019National.DataAcces;
+using Olimpiada2019National.Helpers;
 
 namespace Olimpiada2019National.Forms
 {
@@ -31,7 +32,7 @@ namespace Olimpiada2019National.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             string email = textBox1.Text;
-            string parola = textBox2.Text;
+            string parola = CriptareParola.Criptare(textBox2.Text);
 
             if( String.IsNullOrWhiteSpace(email) || String.IsNullOrWhiteSpace(parola))
             {

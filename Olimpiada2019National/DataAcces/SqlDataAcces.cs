@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Globalization;
 using Olimpiada2019National.Models;
+using Olimpiada2019National.Helpers;
 
 namespace Olimpiada2019National.DataAcces
 {
@@ -64,9 +65,13 @@ namespace Olimpiada2019National.DataAcces
                             {
                                 tokens.Add(value);
                             }
-                            else if (DateTime.TryParseExact(value,"MM/dd/yyyy hh/mm/ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out date))
+                            else if (DateTime.TryParseExact(value, "MM/dd/yyyy hh/mm/ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out date))
                             {
                                 tokens.Add(String.Format("Convert( datetime, '{0}')", date));
+                            }
+                            else if (tableName == "utilizatori" && i == 3)
+                            {
+                                tokens.Add(String.Format("'{0}'", CriptareParola.Criptare(value)));
                             }
                             else
                             {

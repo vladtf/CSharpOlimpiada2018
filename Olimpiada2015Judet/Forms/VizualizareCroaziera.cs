@@ -12,12 +12,13 @@ namespace Olimpiada2015Judet.Forms
 {
     public partial class VizualizareCroaziera : Form
     {
-        private List<Point> listaPoints;
+        private List<Point> porturiCroaziera;
+
         public VizualizareCroaziera(List<int> listaPorturi)
         {
             InitializeComponent();
 
-            listaPoints = SqlDataAcces.GetListaPorturi(listaPorturi);
+            porturiCroaziera = SqlDataAcces.GetListaPorturi(listaPorturi);
 
             InitiateMap();
         }
@@ -29,15 +30,15 @@ namespace Olimpiada2015Judet.Forms
             Pen pen = new Pen(Color.Red, 5);
             using (Graphics gr = Graphics.FromImage(map))
             {
-                Point currentPoint = listaPoints[0];
+                Point currentPoint = porturiCroaziera[0];
 
-                for (int i = 1; i < listaPoints.Count; i++)
+                for (int i = 1; i < porturiCroaziera.Count; i++)
                 {
-                    gr.DrawLine(pen, currentPoint, listaPoints[i]);
+                    gr.DrawLine(pen, currentPoint, porturiCroaziera[i]);
 
-                    currentPoint = listaPoints[i];
+                    currentPoint = porturiCroaziera[i];
                 }
-                gr.DrawLine(pen, currentPoint, listaPoints[0]);
+                gr.DrawLine(pen, currentPoint, porturiCroaziera[0]);
             }
 
             pictureBox1.Image = map;
