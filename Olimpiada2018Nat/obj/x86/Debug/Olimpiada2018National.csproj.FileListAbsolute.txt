@@ -23,4 +23,4 @@ C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada20
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2018Nat\obj\x86\Debug\OlimpiadaCsharp2018.Forms.GhicesteRegiunea.resources
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2018Nat\obj\x86\Debug\OlimpiadaCsharp2018.Forms.Diploma.resources
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2018Nat\obj\x86\Debug\OlimpiadaCsharp2018.Forms.GenereazaTraseu.resources
-C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2018Nat\obj\x86\Debug\Olimpiada2018National.csprojResolveAssemblyReference.cache
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCSharp\Olimpiada2018Nat\obj\x86\Debug\Olimpiada2018National.csprojAssemblyReference.cache

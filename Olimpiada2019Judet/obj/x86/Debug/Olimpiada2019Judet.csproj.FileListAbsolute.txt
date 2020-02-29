@@ -17,3 +17,4 @@ C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada20
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.Properties.Resources.resources
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.csproj.GenerateResource.Cache
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.Forms.MeniuFreeBook.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCSharp\Olimpiada2019Judet\obj\x86\Debug\Olimpiada2019Judet.csprojAssemblyReference.cache

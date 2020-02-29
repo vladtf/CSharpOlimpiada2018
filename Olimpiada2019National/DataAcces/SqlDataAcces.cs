@@ -20,7 +20,7 @@ namespace Olimpiada2019National.DataAcces
 
             tables.ForEach(tableName => InitiateTable(tableName));
         }
-
+        
         private static void TruncateTable(string tableName)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))

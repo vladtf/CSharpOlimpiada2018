@@ -47,6 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAcces\SqlDataAcces.cs" />
+    <Compile Include="DataProvider\ImageProvider.cs" />
+    <Compile Include="Forms\BibliotecarBiblioteca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BibliotecarBiblioteca.Designer.cs">
+      <DependentUpon>BibliotecarBiblioteca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LogareBiblioteca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +71,9 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BibliotecarBiblioteca.resx">
+      <DependentUpon>BibliotecarBiblioteca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogareBiblioteca.resx">
       <DependentUpon>LogareBiblioteca.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,9 +100,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataProvider\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="bin\Debug\Resurse\Imagini\altele\biblioteca1.jpg" />
     <None Include="bin\Debug\Resurse\Imagini\altele\biblioteca2.gif" />

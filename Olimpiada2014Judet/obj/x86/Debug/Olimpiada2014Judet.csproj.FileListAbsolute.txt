@@ -4,3 +4,4 @@ C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada20
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2014Judet\bin\Debug\Olimpiada2014Judet.pdb
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2014Judet\obj\x86\Debug\Olimpiada2014Judet.exe
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2014Judet\obj\x86\Debug\Olimpiada2014Judet.pdb
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCSharp\Olimpiada2014Judet\obj\x86\Debug\Olimpiada2014Judet.csprojAssemblyReference.cache

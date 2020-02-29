@@ -44,7 +44,12 @@ namespace Olimpiada2019National.Forms
 
             if (utilizator.Parola == parola)
             {
-                MessageBox.Show("Autentificat");
+                var page = Singleton<BibliotecarBiblioteca>.Instance;
+
+                page.utilizator = utilizator;
+                page.Show();
+
+                this.Hide();
             }
             else
             {

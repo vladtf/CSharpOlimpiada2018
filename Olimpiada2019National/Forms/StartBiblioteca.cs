@@ -16,11 +16,12 @@ namespace Olimpiada2019National.Forms
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Logare_Click(object sender, EventArgs e)
         {
             Singleton<LogareBiblioteca>.Instance.Show();
 
             this.Hide();
         }
+        
     }
 }

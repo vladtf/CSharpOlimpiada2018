@@ -19,3 +19,4 @@ C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\Olimpiada2017Judet.csproj.GenerateResource.Cache
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\OlimpiadaCSharp.exe
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCsharp\OlimpiadaC2017Judet\obj\x86\Debug\OlimpiadaCSharp.pdb
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCSharp\OlimpiadaC2017Judet\obj\x86\Debug\Olimpiada2017Judet.csprojAssemblyReference.cache

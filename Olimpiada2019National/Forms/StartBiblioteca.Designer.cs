@@ -72,6 +72,7 @@
             this.logareToolStripMenuItem.Name = "logareToolStripMenuItem";
             this.logareToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.logareToolStripMenuItem.Text = "Logare";
+            this.logareToolStripMenuItem.Click += new System.EventHandler(this.Logare_Click);
             // 
             // pictureBox2
             // 
@@ -89,8 +90,8 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Monotype Corsiva", 27.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic)
-                            | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Monotype Corsiva", 27.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(219, 26);
             this.button1.Name = "button1";
@@ -98,7 +99,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Logare in aplicație";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Logare_Click);
             // 
             // panel1
             // 
