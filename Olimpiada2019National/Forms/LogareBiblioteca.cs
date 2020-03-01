@@ -46,7 +46,7 @@ namespace Olimpiada2019National.Forms
             {
                 var page = Singleton<BibliotecarBiblioteca>.Instance;
 
-                page.utilizator = utilizator;
+                page.Utilizator = utilizator;
                 page.Show();
 
                 this.Hide();

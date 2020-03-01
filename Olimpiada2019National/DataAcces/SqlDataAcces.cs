@@ -12,7 +12,7 @@ namespace Olimpiada2019National.DataAcces
 {
     public class SqlDataAcces
     {
-        public static string ConnectionString = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Biblioteca.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
+        public static string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Biblioteca.mdf;Integrated Security=True;Connect Timeout=30";
 
         public static void InitiateDB()
         {
@@ -20,7 +20,7 @@ namespace Olimpiada2019National.DataAcces
 
             tables.ForEach(tableName => InitiateTable(tableName));
         }
-        
+
         private static void TruncateTable(string tableName)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -77,7 +77,6 @@ namespace Olimpiada2019National.DataAcces
                             {
                                 tokens.Add(String.Format("'{0}'", value));
                             }
-
                         }
                         cmdText += string.Join(" , ", tokens) + ");";
 
@@ -85,11 +84,9 @@ namespace Olimpiada2019National.DataAcces
                         {
                             cmd.ExecuteNonQuery();
                         }
-
                     }
                 }
             }
-
         }
 
         public static UserModel Autentificare(string email, string parola)
@@ -120,9 +117,52 @@ namespace Olimpiada2019National.DataAcces
                                 Email = (string)reader["Email"],
                                 Parola = (string)reader["Parola"]
                             };
- 
                         }
                         return utilizator;
+                    }
+                }
+            }
+        }
+
+        public static void InregistreazaUtilizator(UserModel utilizator)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Insert into utilizatori values (@tip, @nume, @email, @parola)";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    cmd.Parameters.AddWithValue("tip", utilizator.TipUtilizator);
+                    cmd.Parameters.AddWithValue("nume", utilizator.NumePenume);
+                    cmd.Parameters.AddWithValue("email", utilizator.Email);
+                    cmd.Parameters.AddWithValue("parola", utilizator.Parola);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static int GetUserIDByEmail(string email)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Select IdUtilizator from Utilizatori where Email = @email";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    cmd.Parameters.AddWithValue("email", email);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        reader.Read();
+
+                        int id = (int)reader[0];
+
+                        return id;
                     }
                 }
             }
