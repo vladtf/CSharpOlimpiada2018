@@ -167,5 +167,38 @@ namespace Olimpiada2019National.DataAcces
                 }
             }
         }
+
+        public static List<UserModel> GetAllUsers()
+        {
+            List<UserModel> utilizatori = new List<UserModel>();
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                string cmdText = "Select * from Utilizatori";
+
+                using (SqlCommand cmd = new SqlCommand(cmdText, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            UserModel user = new UserModel
+                            {
+                                ID = (int)reader[0],
+                                TipUtilizator = (int)reader[1],
+                                NumePenume = (string)reader[2],
+                                Email = (string)reader[3],
+                                Parola = (string)reader[4]
+                            };
+
+                            utilizatori.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return utilizatori;
+        }
     }
 }

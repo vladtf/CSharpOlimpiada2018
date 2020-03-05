@@ -23,10 +23,15 @@ namespace Olimpiada2019National.Forms
         private Timer timer;
         private bool IsEnabled = false;
         private Bitmap selectedImage;
+        private List<UserModel> utilizatori;
 
         public BibliotecarBiblioteca()
         {
             InitializeComponent();
+
+            utilizatori = SqlDataAcces.GetAllUsers();
+            InitiateAfisareCititori(utilizatori);
+            AddCollumnButton();
 
             timer = new Timer();
             timer.Interval = 1000;
@@ -38,6 +43,36 @@ namespace Olimpiada2019National.Forms
             textBox3.PasswordChar = textBox4.PasswordChar = '*';
 
             button1.Enabled = false;
+        }
+
+        private void AddCollumnButton()
+        {
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            button.HeaderText = "Afisieaza";
+            button.Text = "Afiseaza";
+            button.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(button);
+        }
+
+        private void InitiateAfisareCititori(List<UserModel> utilizatori)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("IdCititor");
+            table.Columns.Add("NumePrenume");
+            table.Columns.Add("Email");
+
+            foreach (UserModel item in utilizatori)
+            {
+                DataRow row = table.NewRow();
+                row["IdCititor"] = item.ID;
+                row["NumePrenume"] = item.NumePenume;
+                row["Email"] = item.Email;
+
+                table.Rows.Add(row);
+            }
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = table;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -166,6 +201,14 @@ namespace Olimpiada2019National.Forms
                     (item as TextBox).Text = "";
                 }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string filter = textBox5.Text;
+
+            List<UserModel> peopleFound = utilizatori.Where(x => x.NumePenume.Contains(filter)).ToList();
+            InitiateAfisareCititori(peopleFound);
         }
     }
 }
