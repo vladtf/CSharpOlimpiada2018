@@ -25,6 +25,10 @@ namespace Olimpiada2019National.Forms
         private Bitmap selectedImage;
         private List<UserModel> utilizatori;
 
+        private UserModel _selectedUser;
+        private List<RezervareModel> _rezervari;
+        private List<ImprumutModel> _imprumutri;
+
         public BibliotecarBiblioteca()
         {
             InitializeComponent();
@@ -209,6 +213,96 @@ namespace Olimpiada2019National.Forms
 
             List<UserModel> peopleFound = utilizatori.Where(x => x.NumePenume.Contains(filter)).ToList();
             InitiateAfisareCititori(peopleFound);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            int column = e.ColumnIndex;
+
+            if (dataGridView1.Rows[row].Cells[column] is DataGridViewButtonCell)
+            {
+                int userId = Int32.Parse((string)dataGridView1.Rows[row].Cells["IdCititor"].Value);
+                _selectedUser = utilizatori.Find(x => x.ID == userId);
+
+                IsEnabled = true;
+                _imprumutri = PersonalDataAcces.GetAllLaondsByUserId(_selectedUser.ID, SqlDataAcces.ConnectionString);
+                _rezervari = PersonalDataAcces.GetAllRezervarationByUserId(_selectedUser.ID, SqlDataAcces.ConnectionString);
+                InitiateCititor(_selectedUser);
+                tabControl1.SelectedIndex++;
+            }
+        }
+
+        private void InitiateCititor(UserModel selectedUser)
+        {
+            label8.Text = String.Format("IdCititor : {0}", selectedUser.ID.ToString());
+            label9.Text = String.Format("Nume si Prenume : {0}", selectedUser.NumePenume);
+            label10.Text = String.Format("Rezervari ramase : {0}", _rezervari.Where(x => x.StatusRezervare == 1).Count());
+            label11.Text = String.Format("Imprumuturi ramase : {0}", _imprumutri.Where(x => x.DataRestituire == new DateTime()).Count());
+
+            pictureBox3.Image = ImageProvider.GetImage(selectedUser.ID);
+
+            InitiatiateImprumuturiGrid();
+        }
+
+        private void InitiatiateImprumuturiGrid()
+        {
+            DataTable table = new DataTable();
+
+            table.Columns.Add("IdImprumut");
+            table.Columns.Add("IdCarte");
+            table.Columns.Add("Titlu");
+            table.Columns.Add("Autori");
+            table.Columns.Add("DataImprumut");
+            table.Columns.Add("DataExpirareImprumut");
+
+            foreach (ImprumutModel item in _imprumutri)
+            {
+                if (item.DataRestituire == new DateTime())
+                {
+                    DataRow row = table.NewRow();
+
+                    row[0] = item.IdImprumut;
+                    row[1] = item.IdCarte;
+                    row[2] = item.Carte.Titlu;
+                    row[3] = item.Carte.Autor;
+                    row[4] = item.DataImprumut;
+                    row[5] = item.DataImprumut.AddDays(7);
+
+                    table.Rows.Add(row);
+                }
+            }
+
+            dataGridView2.Columns.Clear();
+            dataGridView2.DataSource = table;
+
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            button.HeaderText = "Restituire";
+            button.Text = "Restituire";
+            button.UseColumnTextForButtonValue = true;
+            dataGridView2.Columns.Add(button);
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView2[e.ColumnIndex, e.RowIndex] is DataGridViewButtonCell)
+            {
+                try
+                {
+                    int idImprumut = Int32.Parse((string)dataGridView2["IdImprumut", e.RowIndex].Value);
+                    PersonalDataAcces.ReturneazaCarte(idImprumut, SqlDataAcces.ConnectionString);
+
+                    _imprumutri = PersonalDataAcces.GetAllLaondsByUserId(_selectedUser.ID, SqlDataAcces.ConnectionString);
+                    InitiateCititor(_selectedUser);
+                }
+                catch { }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var fisa = new FisaCititor(_selectedUser, _imprumutri);
+            fisa.Show();
         }
     }
 }

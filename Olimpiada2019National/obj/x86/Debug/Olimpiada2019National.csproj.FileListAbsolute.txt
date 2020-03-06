@@ -8,3 +8,4 @@ C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada20
 C:\Users\vladu\Documents\visual studio 2010\Projects\OlimpiadaCsharp\Olimpiada2019National\obj\x86\Debug\Olimpiada2019National.Forms.LogareBiblioteca.resources
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCSharp\Olimpiada2019National\obj\x86\Debug\Olimpiada2019National.csprojAssemblyReference.cache
 C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCSharp\Olimpiada2019National\obj\x86\Debug\Olimpiada2019National.Forms.BibliotecarBiblioteca.resources
+C:\Users\vladu\Documents\Visual Studio 2010\Projects\OlimpiadaCSharp\Olimpiada2019National\obj\x86\Debug\Olimpiada2019National.Forms.FisaCititor.resources
